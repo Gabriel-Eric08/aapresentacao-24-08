@@ -1,9 +1,9 @@
-import { MapPin, Building2, Rocket, Users2, ListChecks } from 'lucide-react'
+import { MapPin, Building2, Rocket, Users2, ListChecks, MapPinned } from 'lucide-react'
 import DonutChart from './DonutChart.jsx'
 import { formatarNumero } from '../utils/helpers'
 
-export default function MunicipalityPanel({ municipio }) {
-  if (!municipio) {
+export default function MunicipalityPanel({ municipio, municipioGeo }) {
+  if (!municipioGeo) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-center rounded-2xl border border-dashed border-institucional-border bg-white/60 p-8">
         <MapPin size={32} className="text-institucional-textAlt mb-2" />
@@ -11,6 +11,24 @@ export default function MunicipalityPanel({ municipio }) {
         <p className="text-sm text-gray-500 mt-1 max-w-xs">
           Clique em qualquer ponto do mapa de Pernambuco para visualizar os detalhes de militância e estruturas territoriais.
         </p>
+      </div>
+    )
+  }
+
+  if (!municipio) {
+    return (
+      <div className="rounded-2xl border border-institucional-border bg-white shadow-card overflow-hidden">
+        <div className="bg-gradient-to-br from-institucional-deep to-institucional-vibrant text-white px-4 py-3.5">
+          <p className="text-[11px] uppercase tracking-wide text-purple-200 font-semibold">{municipioGeo.mesorregiao}</p>
+          <h3 className="text-lg font-extrabold leading-tight">{municipioGeo.nome}</h3>
+        </div>
+        <div className="p-6 flex flex-col items-center text-center gap-2">
+          <MapPinned size={28} className="text-institucional-textAlt" />
+          <p className="text-sm font-semibold text-institucional-deep">Cobertura territorial confirmada</p>
+          <p className="text-xs text-gray-500 max-w-[15rem]">
+            Este município já está mapeado pela SecMulher-PE, mas ainda não possui ficha detalhada nesta amostra demonstrativa. Ao carregar a base real, os dados aparecerão aqui automaticamente.
+          </p>
+        </div>
       </div>
     )
   }

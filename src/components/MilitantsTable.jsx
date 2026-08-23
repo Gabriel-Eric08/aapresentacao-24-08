@@ -1,11 +1,10 @@
 import { Fragment, useMemo, useState } from 'react'
 import { ChevronDown, ChevronRight, Search, X, Phone, StickyNote, CalendarClock, Rocket, MapPin } from 'lucide-react'
-import { mascararNome, mascararContato, nivelEngajamento, CORES_ENGAJAMENTO } from '../utils/helpers'
+import { mascararNome, mascararContato } from '../utils/helpers'
 
 export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimparMunicipio, onFocarMunicipio }) {
   const [busca, setBusca] = useState('')
   const [bairro, setBairro] = useState('Todos')
-  const [engajamento, setEngajamento] = useState('Todos')
   const [expandidos, setExpandidos] = useState(new Set())
 
   const bairros = useMemo(() => {
@@ -16,16 +15,14 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
   const linhasFiltradas = useMemo(() => {
     const buscaLower = busca.trim().toLowerCase()
     return linhas.filter((l) => {
-      const nivel = nivelEngajamento(l.engajamento)
       if (bairro !== 'Todos' && l.bairro !== bairro) return false
-      if (engajamento !== 'Todos' && nivel !== engajamento) return false
       if (buscaLower) {
         const alvo = `${l.nome} ${l.setor} ${l.municipio} ${l.bairro}`.toLowerCase()
         if (!alvo.includes(buscaLower)) return false
       }
       return true
     })
-  }, [linhas, busca, bairro, engajamento])
+  }, [linhas, busca, bairro])
 
   function alternarExpandido(id) {
     setExpandidos((prev) => {
@@ -81,16 +78,6 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
               <option key={b} value={b}>{b === 'Todos' ? 'Todos os Bairros' : b}</option>
             ))}
           </select>
-          <select
-            value={engajamento}
-            onChange={(e) => setEngajamento(e.target.value)}
-            className="text-sm rounded-lg border border-institucional-border px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-institucional-vibrant"
-          >
-            <option value="Todos">Todo Engajamento</option>
-            <option value="Alto">Alto</option>
-            <option value="Médio">Médio</option>
-            <option value="Baixo">Baixo</option>
-          </select>
         </div>
       </div>
 
@@ -103,15 +90,12 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
               <th className="text-left px-3 py-2.5 font-bold">Setor / Órgão</th>
               <th className="text-left px-3 py-2.5 font-bold">Município</th>
               <th className="text-left px-3 py-2.5 font-bold">Bairro</th>
-              <th className="text-left px-3 py-2.5 font-bold">Engajamento</th>
               <th className="text-left px-3 py-2.5 font-bold">Ações</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-institucional-border">
             {linhasFiltradas.map((l) => {
               const aberto = expandidos.has(l.id)
-              const nivel = nivelEngajamento(l.engajamento)
-              const cores = CORES_ENGAJAMENTO[nivel]
               return (
                 <Fragment key={l.id}>
                   <tr className={`hover:bg-institucional-bg transition-colors ${aberto ? 'bg-institucional-bg' : ''}`}>
@@ -131,12 +115,6 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
                     <td className="px-3 py-2.5 text-gray-600 whitespace-nowrap">{l.municipio}</td>
                     <td className="px-3 py-2.5 text-gray-600 whitespace-nowrap">{l.bairro}</td>
                     <td className="px-3 py-2.5">
-                      <span className={`inline-flex items-center gap-1.5 text-xs font-semibold rounded-full px-2.5 py-1 border ${cores.texto} ${cores.fundo} ${cores.borda}`}>
-                        <span className={`w-1.5 h-1.5 rounded-full ${cores.ponto}`} />
-                        {nivel} · {l.engajamento}%
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5">
                       <button
                         onClick={() => onFocarMunicipio(l.municipioId)}
                         className="inline-flex items-center gap-1 text-xs font-semibold text-institucional-vibrant hover:text-institucional-deep hover:underline"
@@ -147,7 +125,7 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
                   </tr>
                   {aberto && (
                     <tr>
-                      <td colSpan={7} className="px-3 pb-4 pt-1 bg-institucional-bg">
+                      <td colSpan={6} className="px-3 pb-4 pt-1 bg-institucional-bg">
                         <div className="grid sm:grid-cols-3 gap-3 rounded-xl border border-institucional-border bg-white p-4">
                           <div>
                             <p className="flex items-center gap-1.5 text-xs font-bold text-institucional-deep mb-1.5">
@@ -184,7 +162,7 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
             })}
             {linhasFiltradas.length === 0 && (
               <tr>
-                <td colSpan={7} className="text-center text-sm text-gray-400 py-10">
+                <td colSpan={6} className="text-center text-sm text-gray-400 py-10">
                   Nenhum registro encontrado para os filtros selecionados.
                 </td>
               </tr>

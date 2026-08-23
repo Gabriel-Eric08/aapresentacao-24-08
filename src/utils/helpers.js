@@ -16,18 +16,6 @@ export function formatarNumero(valor) {
   return valor.toLocaleString('pt-BR')
 }
 
-export function nivelEngajamento(percentual) {
-  if (percentual >= 80) return 'Alto'
-  if (percentual >= 50) return 'Médio'
-  return 'Baixo'
-}
-
-export const CORES_ENGAJAMENTO = {
-  Alto: { texto: 'text-emerald-700', fundo: 'bg-emerald-50', ponto: 'bg-emerald-500', borda: 'border-emerald-200' },
-  Médio: { texto: 'text-amber-700', fundo: 'bg-amber-50', ponto: 'bg-amber-500', borda: 'border-amber-200' },
-  Baixo: { texto: 'text-rose-700', fundo: 'bg-rose-50', ponto: 'bg-rose-500', borda: 'border-rose-200' },
-}
-
 // Interpola entre o roxo mais claro e o roxo institucional mais profundo
 // conforme o percentual de militância — usado no mapa (coroplético) e legendas.
 export function escalaRoxo(percentual) {
@@ -51,11 +39,4 @@ export function escalaRoxo(percentual) {
   const t = (clamped - inicio.p) / faixa
   const rgb = inicio.cor.map((c, i) => Math.round(c + (fim.cor[i] - c) * t))
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
-}
-
-export function raioPorMilitantes(total, min = 6, max = 22) {
-  // Escala em raiz quadrada para evitar que municípios grandes dominem visualmente.
-  const maior = 2500
-  const escala = Math.sqrt(total / maior)
-  return Math.max(min, Math.min(max, min + escala * (max - min) * 2))
 }

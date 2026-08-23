@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { MOCK_DATA } from './data/mockData.js'
+import { PE_MUNICIPIOS_GEO } from './data/pernambucoMunicipiosGeo.js'
 import Header from './components/Header.jsx'
 import KpiCards from './components/KpiCards.jsx'
 import PernambucoMap from './components/PernambucoMap.jsx'
@@ -21,32 +22,39 @@ export default function App() {
 
   const { municipios, mesorregioes, setores, kpis } = MOCK_DATA
 
+  // O mapa cobre os 184 municípios reais de PE; só uma amostra deles (26)
+  // tem ficha detalhada em MOCK_DATA — este índice faz a ponte entre os dois.
+  const dadosPorId = useMemo(() => new Map(municipios.map((m) => [m.id, m])), [municipios])
+
   // Municípios que atendem aos filtros globais (mesorregião, setor, busca).
   // Usado para "esmaecer" no mapa e para restringir a tabela.
   const idsVisiveis = useMemo(() => {
     const buscaLower = busca.trim().toLowerCase()
     const set = new Set()
-    for (const m of municipios) {
-      if (filtroMesorregiao !== 'Todas' && m.mesorregiao !== filtroMesorregiao) continue
-      if (filtroSetor !== 'Todos' && !m.pessoas.some((p) => p.setor === filtroSetor)) continue
+    for (const g of PE_MUNICIPIOS_GEO) {
+      if (filtroMesorregiao !== 'Todas' && g.mesorregiao !== filtroMesorregiao) continue
+      const dados = dadosPorId.get(g.id)
+      if (filtroSetor !== 'Todos' && !dados?.pessoas.some((p) => p.setor === filtroSetor)) continue
       if (buscaLower) {
-        const nomeBate = m.nome.toLowerCase().includes(buscaLower)
-        const bairroBate = m.topBairros.some((b) => b.bairro.toLowerCase().includes(buscaLower))
-        const pessoaBate = m.pessoas.some((p) => p.nome.toLowerCase().includes(buscaLower))
+        const nomeBate = g.nome.toLowerCase().includes(buscaLower)
+        const bairroBate = dados?.topBairros.some((b) => b.bairro.toLowerCase().includes(buscaLower))
+        const pessoaBate = dados?.pessoas.some((p) => p.nome.toLowerCase().includes(buscaLower))
         if (!nomeBate && !bairroBate && !pessoaBate) continue
       }
-      set.add(m.id)
+      set.add(g.id)
     }
     return set
-  }, [municipios, filtroMesorregiao, filtroSetor, busca])
+  }, [dadosPorId, filtroMesorregiao, filtroSetor, busca])
 
-  const municipioSelecionado = useMemo(
-    () => municipios.find((m) => m.id === selectedMunicipioId) ?? null,
-    [municipios, selectedMunicipioId]
+  const municipioGeoSelecionado = useMemo(
+    () => PE_MUNICIPIOS_GEO.find((g) => g.id === selectedMunicipioId) ?? null,
+    [selectedMunicipioId]
   )
+  const municipioSelecionado = selectedMunicipioId ? dadosPorId.get(selectedMunicipioId) ?? null : null
 
-  // Linhas da tabela: todas as pessoas dos municípios visíveis, respeitando
-  // também o filtro de setor global e o município selecionado no mapa.
+  // Linhas da tabela: todas as pessoas dos municípios visíveis (e com ficha
+  // detalhada), respeitando o filtro de setor global e o município
+  // selecionado no mapa.
   const linhasTabela = useMemo(() => {
     const base = selectedMunicipioId
       ? municipios.filter((m) => m.id === selectedMunicipioId)
@@ -114,7 +122,7 @@ export default function App() {
                 )}
               </div>
               <PernambucoMap
-                municipios={municipios}
+                dadosPorId={dadosPorId}
                 idsVisiveis={idsVisiveis}
                 selectedId={selectedMunicipioId}
                 onSelect={handleSelecionarMunicipio}
@@ -123,13 +131,13 @@ export default function App() {
               />
             </div>
 
-            <MunicipalityPanel municipio={municipioSelecionado} />
+            <MunicipalityPanel municipio={municipioSelecionado} municipioGeo={municipioGeoSelecionado} />
           </div>
 
           <MilitantsTable
             linhas={linhasTabela}
             lgpdOn={lgpdOn}
-            municipioAtivo={municipioSelecionado?.nome ?? null}
+            municipioAtivo={municipioGeoSelecionado?.nome ?? null}
             onLimparMunicipio={() => setSelectedMunicipioId(null)}
             onFocarMunicipio={(id) => setSelectedMunicipioId(id)}
           />
