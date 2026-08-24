@@ -1,4 +1,4 @@
-import { X, Building2, Rocket, Users } from 'lucide-react'
+import { X, MapPin } from 'lucide-react'
 import DonutChart from './DonutChart.jsx'
 import { formatarNumero } from '../utils/helpers'
 
@@ -24,25 +24,19 @@ function Coluna({ municipio }) {
             <p className="text-[11px] text-gray-500">Militantes</p>
           </div>
           <div className="rounded-lg bg-emerald-50 py-2">
-            <p className="text-lg font-extrabold text-emerald-700">{municipio.estruturas.length}</p>
-            <p className="text-[11px] text-gray-500">Estruturas</p>
+            <p className="text-lg font-extrabold text-emerald-700">{municipio.topBairros.length}</p>
+            <p className="text-[11px] text-gray-500">Bairros mapeados</p>
           </div>
         </div>
         <div>
-          <p className="flex items-center gap-1.5 text-xs font-bold text-institucional-deep mb-1.5"><Building2 size={13} /> Estruturas</p>
-          <ul className="text-xs text-gray-600 space-y-1 list-disc list-inside">
-            {municipio.estruturas.map((e) => <li key={e.nome}>{e.nome}</li>)}
-          </ul>
-        </div>
-        <div>
-          <p className="flex items-center gap-1.5 text-xs font-bold text-institucional-deep mb-1.5"><Rocket size={13} /> Projetos Ativos</p>
-          <ul className="text-xs text-gray-600 space-y-1 list-disc list-inside">
-            {municipio.projetosAtivos.map((p) => <li key={p.nome}>{p.nome}</li>)}
-          </ul>
-        </div>
-        <div>
-          <p className="flex items-center gap-1.5 text-xs font-bold text-institucional-deep mb-1.5"><Users size={13} /> População Estimada</p>
-          <p className="text-xs text-gray-600">{formatarNumero(municipio.populacaoEstimada)} habitantes</p>
+          <p className="flex items-center gap-1.5 text-xs font-bold text-institucional-deep mb-1.5"><MapPin size={13} /> Top Bairros</p>
+          {municipio.topBairros.length > 0 ? (
+            <ul className="text-xs text-gray-600 space-y-1 list-disc list-inside">
+              {municipio.topBairros.map((b) => <li key={b.bairro}>{b.bairro} — {formatarNumero(b.militantes)}</li>)}
+            </ul>
+          ) : (
+            <p className="text-xs text-gray-500">Bairro não informado para os militantes deste município.</p>
+          )}
         </div>
       </div>
     </div>

@@ -23,58 +23,43 @@ export default function PrintDossie({ municipio, kpis }) {
         <>
           <h2 className="text-lg font-bold text-institucional-deep mb-1">{municipio.nome} — {municipio.mesorregiao}</h2>
           <p className="text-sm text-gray-600 mb-4">
-            {formatarNumero(municipio.populacaoEstimada)} habitantes (estimativa) · {municipio.percentualMilitantes}% de militância mapeada
+            {municipio.percentualMilitantes}% de concentração relativa de militância (vs. município com mais militantes mapeados)
           </p>
 
-          <div className="grid grid-cols-4 gap-3 mb-5">
+          <div className="grid grid-cols-3 gap-3 mb-5">
             <div className="border border-gray-300 rounded-lg p-2 text-center">
               <p className="text-lg font-extrabold text-institucional-deep">{formatarNumero(municipio.totalMilitantes)}</p>
               <p className="text-[10px] text-gray-500">Militantes</p>
             </div>
             <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{municipio.estruturas.length}</p>
-              <p className="text-[10px] text-gray-500">Estruturas</p>
+              <p className="text-lg font-extrabold text-institucional-deep">{municipio.topBairros.length}</p>
+              <p className="text-[10px] text-gray-500">Bairros Mapeados</p>
             </div>
             <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{municipio.projetosAtivos.length}</p>
-              <p className="text-[10px] text-gray-500">Projetos Ativos</p>
-            </div>
-            <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{municipio.pessoas.length}</p>
-              <p className="text-[10px] text-gray-500">Fichas Detalhadas</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 text-sm">
-            <div>
-              <h3 className="font-bold text-institucional-deep mb-1.5">Estruturas Presentes</h3>
-              <ul className="list-disc list-inside space-y-0.5 text-gray-700">
-                {municipio.estruturas.map((e) => <li key={e.nome}>{e.nome} — {e.tipo}</li>)}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-institucional-deep mb-1.5">Projetos Ativos</h3>
-              <ul className="list-disc list-inside space-y-0.5 text-gray-700">
-                {municipio.projetosAtivos.map((p) => <li key={p.nome}>{p.nome}</li>)}
-              </ul>
+              <p className="text-lg font-extrabold text-institucional-deep">{new Set(municipio.pessoas.map((p) => p.setor)).size}</p>
+              <p className="text-[10px] text-gray-500">Setores / Cargos</p>
             </div>
           </div>
 
           <div className="mt-5">
             <h3 className="font-bold text-institucional-deep mb-1.5 text-sm">Top Bairros com Maior Presença</h3>
-            <ul className="grid grid-cols-3 gap-2 text-sm text-gray-700">
-              {municipio.topBairros.map((b) => (
-                <li key={b.bairro} className="border border-gray-300 rounded-lg px-2 py-1">
-                  {b.bairro} — {formatarNumero(b.militantes)}
-                </li>
-              ))}
-            </ul>
+            {municipio.topBairros.length > 0 ? (
+              <ul className="grid grid-cols-3 gap-2 text-sm text-gray-700">
+                {municipio.topBairros.map((b) => (
+                  <li key={b.bairro} className="border border-gray-300 rounded-lg px-2 py-1">
+                    {b.bairro} — {formatarNumero(b.militantes)}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-xs text-gray-500">Bairro não informado para os militantes deste município.</p>
+            )}
           </div>
         </>
       ) : (
         <>
           <h2 className="text-lg font-bold text-institucional-deep mb-4">Panorama Estadual Consolidado</h2>
-          <div className="grid grid-cols-5 gap-3">
+          <div className="grid grid-cols-4 gap-3">
             <div className="border border-gray-300 rounded-lg p-2 text-center">
               <p className="text-lg font-extrabold text-institucional-deep">{formatarNumero(kpis.totalMilitantes)}</p>
               <p className="text-[10px] text-gray-500">Militantes Mapeados</p>
@@ -84,16 +69,12 @@ export default function PrintDossie({ municipio, kpis }) {
               <p className="text-[10px] text-gray-500">Municípios</p>
             </div>
             <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{kpis.estruturasSecMulher}</p>
-              <p className="text-[10px] text-gray-500">Estruturas</p>
+              <p className="text-lg font-extrabold text-institucional-deep">{kpis.setoresMapeados}</p>
+              <p className="text-[10px] text-gray-500">Setores / Cargos</p>
             </div>
             <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{kpis.eventosEmpreendedorismo}</p>
-              <p className="text-[10px] text-gray-500">Eventos</p>
-            </div>
-            <div className="border border-gray-300 rounded-lg p-2 text-center">
-              <p className="text-lg font-extrabold text-institucional-deep">{kpis.engajamentoMedio.toFixed(1)}%</p>
-              <p className="text-[10px] text-gray-500">Engaj. Médio</p>
+              <p className="text-lg font-extrabold text-institucional-deep">{kpis.bairrosMapeados}</p>
+              <p className="text-[10px] text-gray-500">Bairros</p>
             </div>
           </div>
           <p className="text-xs text-gray-500 mt-4">
@@ -103,7 +84,7 @@ export default function PrintDossie({ municipio, kpis }) {
       )}
 
       <p className="text-[10px] text-gray-400 mt-8 border-t border-gray-300 pt-2">
-        Documento gerado automaticamente pelo Painel de Mapeamento de Militância — SecMulher-PE · Dados demonstrativos.
+        Documento gerado automaticamente pelo Painel de Mapeamento de Militância — SecMulher-PE.
       </p>
     </div>
   )

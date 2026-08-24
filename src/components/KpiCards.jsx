@@ -1,4 +1,4 @@
-import { Users, MapPinCheck, Building2, Store, TrendingUp } from 'lucide-react'
+import { Users, MapPinCheck, Briefcase, MapPin } from 'lucide-react'
 import { formatarNumero } from '../utils/helpers'
 
 function KpiCard({ icon, label, value, sub, accent }) {
@@ -18,12 +18,12 @@ export default function KpiCards({ kpis }) {
   const cobertura = Math.round((kpis.coberturaMunicipal.atual / kpis.coberturaMunicipal.total) * 100)
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
       <KpiCard
         icon={<Users size={20} className="text-institucional-vibrant" />}
-        label="Total de Militantes Mapeados"
+        label="Total de Militantes"
         value={formatarNumero(kpis.totalMilitantes)}
-        sub="Base consolidada estadual"
+        sub="Contatos + listagem de voluntárias"
         accent={{ bg: 'bg-institucional-soft', text: 'text-institucional-text' }}
       />
       <KpiCard
@@ -34,25 +34,18 @@ export default function KpiCards({ kpis }) {
         accent={{ bg: 'bg-emerald-50', text: 'text-emerald-700' }}
       />
       <KpiCard
-        icon={<Building2 size={20} className="text-institucional-vibrant" />}
-        label="Estruturas da SecMulher"
-        value={formatarNumero(kpis.estruturasSecMulher)}
-        sub="CRMs, Coordenadorias e Delegacias"
+        icon={<Briefcase size={20} className="text-institucional-vibrant" />}
+        label="Setores / Cargos Mapeados"
+        value={formatarNumero(kpis.setoresMapeados)}
+        sub="Valores distintos identificados"
         accent={{ bg: 'bg-institucional-soft', text: 'text-institucional-text' }}
       />
       <KpiCard
-        icon={<Store size={20} className="text-institucional-amber" />}
-        label="Estandes & Eventos"
-        value={formatarNumero(kpis.eventosEmpreendedorismo)}
-        sub="Ações realizadas no ano"
+        icon={<MapPin size={20} className="text-institucional-amber" />}
+        label="Bairros Mapeados"
+        value={formatarNumero(kpis.bairrosMapeados)}
+        sub="Bairros distintos identificados"
         accent={{ bg: 'bg-amber-50', text: 'text-amber-700' }}
-      />
-      <KpiCard
-        icon={<TrendingUp size={20} className="text-emerald-600" />}
-        label="Engajamento Ativo Médio"
-        value={`${kpis.engajamentoMedio.toFixed(1)}%`}
-        sub="Últimos 90 dias"
-        accent={{ bg: 'bg-emerald-50', text: 'text-emerald-700' }}
       />
     </div>
   )

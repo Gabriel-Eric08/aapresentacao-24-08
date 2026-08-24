@@ -1,4 +1,4 @@
-import { MapPin, Building2, Rocket, Users2, ListChecks, MapPinned } from 'lucide-react'
+import { MapPin, Users2, ListChecks, MapPinned } from 'lucide-react'
 import DonutChart from './DonutChart.jsx'
 import { formatarNumero } from '../utils/helpers'
 
@@ -9,7 +9,7 @@ export default function MunicipalityPanel({ municipio, municipioGeo }) {
         <MapPin size={32} className="text-institucional-textAlt mb-2" />
         <p className="font-semibold text-institucional-deep">Selecione um município no mapa</p>
         <p className="text-sm text-gray-500 mt-1 max-w-xs">
-          Clique em qualquer ponto do mapa de Pernambuco para visualizar os detalhes de militância e estruturas territoriais.
+          Clique em qualquer ponto do mapa de Pernambuco para visualizar os militantes mapeados no município.
         </p>
       </div>
     )
@@ -24,9 +24,9 @@ export default function MunicipalityPanel({ municipio, municipioGeo }) {
         </div>
         <div className="p-6 flex flex-col items-center text-center gap-2">
           <MapPinned size={28} className="text-institucional-textAlt" />
-          <p className="text-sm font-semibold text-institucional-deep">Cobertura territorial confirmada</p>
+          <p className="text-sm font-semibold text-institucional-deep">Nenhum militante identificado</p>
           <p className="text-xs text-gray-500 max-w-[15rem]">
-            Este município já está mapeado pela SecMulher-PE, mas ainda não possui ficha detalhada nesta amostra demonstrativa. Ao carregar a base real, os dados aparecerão aqui automaticamente.
+            Nenhuma pessoa com bairro e setor identificados neste município nas planilhas de militância carregadas.
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function MunicipalityPanel({ municipio, municipioGeo }) {
         <p className="text-[11px] uppercase tracking-wide text-purple-200 font-semibold">{municipio.mesorregiao}</p>
         <h3 className="text-lg font-extrabold leading-tight">{municipio.nome}</h3>
         <p className="text-xs text-purple-100 mt-0.5">
-          {formatarNumero(municipio.populacaoEstimada)} habitantes (estimativa)
+          {formatarNumero(municipio.totalMilitantes)} militante(s) mapeado(s)
         </p>
       </div>
 
@@ -49,64 +49,35 @@ export default function MunicipalityPanel({ municipio, municipioGeo }) {
         <div className="flex items-center justify-center">
           <DonutChart
             percentual={municipio.percentualMilitantes}
-            label="Militância no município"
-            sublabel={`${formatarNumero(municipio.totalMilitantes)} pessoas mapeadas`}
+            label="Concentração de militância"
+            sublabel={`Relativo ao município com mais militantes mapeados`}
           />
         </div>
 
         <section>
           <h4 className="flex items-center gap-1.5 text-sm font-bold text-institucional-deep mb-2">
-            <Building2 size={16} /> Estruturas Presentes ({municipio.estruturas.length})
-          </h4>
-          <ul className="space-y-1.5">
-            {municipio.estruturas.map((e) => (
-              <li key={e.nome} className="text-xs bg-institucional-soft border border-institucional-border rounded-lg px-2.5 py-1.5">
-                <p className="font-semibold text-institucional-text">{e.nome}</p>
-                <p className="text-gray-500">{e.tipo} · {e.endereco}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h4 className="flex items-center gap-1.5 text-sm font-bold text-institucional-deep mb-2">
-            <Rocket size={16} /> Projetos Ativos ({municipio.projetosAtivos.length})
-          </h4>
-          <ul className="space-y-1.5">
-            {municipio.projetosAtivos.map((p) => (
-              <li key={p.nome} className="text-xs border border-institucional-border rounded-lg px-2.5 py-1.5">
-                <div className="flex items-center justify-between gap-2">
-                  <p className="font-semibold text-gray-800">{p.nome}</p>
-                  <span className="shrink-0 text-[10px] font-bold uppercase bg-emerald-50 text-emerald-700 rounded-full px-2 py-0.5">
-                    {p.status}
-                  </span>
-                </div>
-                <p className="text-gray-500 mt-0.5">{p.descricao}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h4 className="flex items-center gap-1.5 text-sm font-bold text-institucional-deep mb-2">
             <Users2 size={16} /> Top Bairros com Maior Presença
           </h4>
-          <ul className="space-y-2">
-            {municipio.topBairros.map((b) => (
-              <li key={b.bairro}>
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="font-medium text-gray-700">{b.bairro}</span>
-                  <span className="text-gray-500">{formatarNumero(b.militantes)} militantes</span>
-                </div>
-                <div className="h-1.5 rounded-full bg-institucional-soft overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-institucional-vibrant to-institucional-deep"
-                    style={{ width: `${maiorBairro ? (b.militantes / maiorBairro.militantes) * 100 : 0}%` }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          {municipio.topBairros.length > 0 ? (
+            <ul className="space-y-2">
+              {municipio.topBairros.map((b) => (
+                <li key={b.bairro}>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="font-medium text-gray-700">{b.bairro}</span>
+                    <span className="text-gray-500">{formatarNumero(b.militantes)} militantes</span>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-institucional-soft overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-institucional-vibrant to-institucional-deep"
+                      style={{ width: `${maiorBairro ? (b.militantes / maiorBairro.militantes) * 100 : 0}%` }}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-xs text-gray-500">Bairro não informado para os militantes deste município.</p>
+          )}
         </section>
 
         <section>
@@ -114,7 +85,7 @@ export default function MunicipalityPanel({ municipio, municipioGeo }) {
             <ListChecks size={16} /> Registros Individuais no Painel
           </h4>
           <p className="text-xs text-gray-500">
-            {municipio.pessoas.length} militantes com ficha detalhada nesta amostra — veja a tabela abaixo, já filtrada para {municipio.nome}.
+            {municipio.pessoas.length} militante(s) mapeado(s) — veja a tabela abaixo, já filtrada para {municipio.nome}.
           </p>
         </section>
       </div>

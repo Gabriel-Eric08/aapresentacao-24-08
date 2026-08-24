@@ -1,29 +1,39 @@
 import { useMemo, useState } from 'react'
-import { MOCK_DATA } from './data/mockData.js'
+import { MILITANCIA_DATA } from './data/militanciaData.js'
+import { EVENTOS_DATA } from './data/eventosData.js'
+import { EMPREENDE_MULHER_DATA } from './data/empreendeMulherData.js'
 import { PE_MUNICIPIOS_GEO } from './data/pernambucoMunicipiosGeo.js'
 import Header from './components/Header.jsx'
 import KpiCards from './components/KpiCards.jsx'
 import PernambucoMap from './components/PernambucoMap.jsx'
 import MunicipalityPanel from './components/MunicipalityPanel.jsx'
 import MilitantsTable from './components/MilitantsTable.jsx'
+import EventosPanel from './components/EventosPanel.jsx'
+import ProgramasPanel from './components/ProgramasPanel.jsx'
 import ComparisonPanel from './components/ComparisonPanel.jsx'
 import PrintDossie from './components/PrintDossie.jsx'
 
 export default function App() {
+  const [abaAtiva, setAbaAtiva] = useState('militancia')
   const [filtroMesorregiao, setFiltroMesorregiao] = useState('Todas')
   const [filtroSetor, setFiltroSetor] = useState('Todos')
   const [busca, setBusca] = useState('')
   const [lgpdOn, setLgpdOn] = useState(false)
-  const [selectedMunicipioId, setSelectedMunicipioId] = useState(null)
+  const [selectedMunicipioId, setSelectedMunicipioId] = useState('recife')
 
   const [compareMode, setCompareMode] = useState(false)
   const [compareIdA, setCompareIdA] = useState(null)
   const [compareIdB, setCompareIdB] = useState(null)
 
-  const { municipios, mesorregioes, setores, kpis } = MOCK_DATA
+  const { municipios, mesorregioes, setores, kpis, pendencias } = MILITANCIA_DATA
+  const linhasPendentes = useMemo(
+    () => pendencias.map((p) => ({ ...p, municipioId: null, mesorregiao: null })),
+    [pendencias]
+  )
 
-  // O mapa cobre os 184 municípios reais de PE; só uma amostra deles (26)
-  // tem ficha detalhada em MOCK_DATA — este índice faz a ponte entre os dois.
+  // O mapa cobre os 184 municípios reais de PE; só os municípios com ao
+  // menos um militante identificado aparecem em MILITANCIA_DATA — este
+  // índice faz a ponte entre os dois.
   const dadosPorId = useMemo(() => new Map(municipios.map((m) => [m.id, m])), [municipios])
 
   // Municípios que atendem aos filtros globais (mesorregião, setor, busca).
@@ -60,12 +70,24 @@ export default function App() {
       ? municipios.filter((m) => m.id === selectedMunicipioId)
       : municipios.filter((m) => idsVisiveis.has(m.id))
 
-    return base.flatMap((m) =>
+    const linhasMunicipios = base.flatMap((m) =>
       m.pessoas
         .filter((p) => filtroSetor === 'Todos' || p.setor === filtroSetor)
         .map((p) => ({ ...p, municipio: m.nome, municipioId: m.id, mesorregiao: m.mesorregiao }))
     )
-  }, [municipios, idsVisiveis, selectedMunicipioId, filtroSetor])
+
+    // Pessoas sem município identificado só entram na listagem geral (sem
+    // filtro de município/mesorregião/setor específico) e sempre no final.
+    if (selectedMunicipioId || filtroMesorregiao !== 'Todas' || filtroSetor !== 'Todos') {
+      return linhasMunicipios
+    }
+    const buscaLower = busca.trim().toLowerCase()
+    const pendentesFiltrados = buscaLower
+      ? linhasPendentes.filter((p) => p.nome.toLowerCase().includes(buscaLower))
+      : linhasPendentes
+
+    return [...linhasMunicipios, ...pendentesFiltrados]
+  }, [municipios, idsVisiveis, selectedMunicipioId, filtroMesorregiao, filtroSetor, busca, linhasPendentes])
 
   function handleSelecionarMunicipio(id) {
     if (compareMode) {
@@ -104,47 +126,62 @@ export default function App() {
           compareMode={compareMode}
           setCompareMode={setCompareMode}
           onExportar={handleExportar}
+          abaAtiva={abaAtiva}
+          setAbaAtiva={setAbaAtiva}
         />
 
         <main className="max-w-[1600px] mx-auto px-4 sm:px-6 py-5 space-y-5">
-          <KpiCards kpis={kpis} />
+          {abaAtiva === 'militancia' ? (
+            <>
+              <KpiCards kpis={kpis} />
 
-          <div className="grid lg:grid-cols-[65%_35%] gap-5 items-start">
-            <div className="rounded-2xl border border-institucional-border bg-white shadow-card p-4">
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="text-base font-extrabold text-institucional-deep">
-                  Mapa Interativo de Pernambuco — Presença Territorial
-                </h2>
-                {compareMode && (
-                  <span className="text-xs font-semibold text-institucional-amber bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
-                    Modo comparação: clique em 2 municípios
-                  </span>
-                )}
+              <div className="grid lg:grid-cols-[65%_35%] gap-5 items-start">
+                <div className="rounded-2xl border border-institucional-border bg-white shadow-card p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h2 className="text-base font-extrabold text-institucional-deep">
+                      Mapa Interativo de Pernambuco — Presença Territorial
+                    </h2>
+                    {compareMode && (
+                      <span className="text-xs font-semibold text-institucional-amber bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
+                        Modo comparação: clique em 2 municípios
+                      </span>
+                    )}
+                  </div>
+                  <PernambucoMap
+                    dadosPorId={dadosPorId}
+                    idsVisiveis={idsVisiveis}
+                    selectedId={selectedMunicipioId}
+                    onSelect={handleSelecionarMunicipio}
+                    compareMode={compareMode}
+                    compareIds={[compareIdA, compareIdB].filter(Boolean)}
+                  />
+                </div>
+
+                <MunicipalityPanel municipio={municipioSelecionado} municipioGeo={municipioGeoSelecionado} />
               </div>
-              <PernambucoMap
-                dadosPorId={dadosPorId}
-                idsVisiveis={idsVisiveis}
-                selectedId={selectedMunicipioId}
-                onSelect={handleSelecionarMunicipio}
-                compareMode={compareMode}
-                compareIds={[compareIdA, compareIdB].filter(Boolean)}
+
+              <MilitantsTable
+                linhas={linhasTabela}
+                lgpdOn={lgpdOn}
+                municipioAtivo={municipioGeoSelecionado?.nome ?? null}
+                onLimparMunicipio={() => setSelectedMunicipioId(null)}
+                onFocarMunicipio={(id) => setSelectedMunicipioId(id)}
               />
-            </div>
-
-            <MunicipalityPanel municipio={municipioSelecionado} municipioGeo={municipioGeoSelecionado} />
-          </div>
-
-          <MilitantsTable
-            linhas={linhasTabela}
-            lgpdOn={lgpdOn}
-            municipioAtivo={municipioGeoSelecionado?.nome ?? null}
-            onLimparMunicipio={() => setSelectedMunicipioId(null)}
-            onFocarMunicipio={(id) => setSelectedMunicipioId(id)}
-          />
+            </>
+          ) : abaAtiva === 'dados' ? (
+            <EventosPanel
+              eventos={EVENTOS_DATA.eventos}
+              totalParticipacoes={EVENTOS_DATA.totalParticipacoes}
+              totalEmpreendedoras={EMPREENDE_MULHER_DATA.totalCadastradas}
+              lgpdOn={lgpdOn}
+            />
+          ) : (
+            <ProgramasPanel empreendeMulher={EMPREENDE_MULHER_DATA} lgpdOn={lgpdOn} />
+          )}
         </main>
 
         <footer className="text-center text-xs text-gray-400 py-6">
-          SecMulher-PE · Painel de Mapeamento de Militância — {MOCK_DATA.metadata.modo === 'demonstrativo' ? 'Base de dados demonstrativa' : 'Base de dados oficial'} · Atualizado em {MOCK_DATA.metadata.ultimaAtualizacao.split('-').reverse().join('/')}
+          SecMulher-PE · Painel de Mapeamento de Militância — {MILITANCIA_DATA.metadata.modo === 'demonstrativo' ? 'Base de dados demonstrativa' : 'Base de dados oficial'} · Atualizado em {MILITANCIA_DATA.metadata.ultimaAtualizacao.split('-').reverse().join('/')}
         </footer>
       </div>
 

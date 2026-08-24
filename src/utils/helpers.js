@@ -16,6 +16,12 @@ export function formatarNumero(valor) {
   return valor.toLocaleString('pt-BR')
 }
 
+export function formatarData(isoDate) {
+  if (!isoDate) return null
+  const [ano, mes, dia] = isoDate.split('-')
+  return `${dia}/${mes}/${ano}`
+}
+
 // Interpola entre o roxo mais claro e o roxo institucional mais profundo
 // conforme o percentual de militância — usado no mapa (coroplético) e legendas.
 export function escalaRoxo(percentual) {

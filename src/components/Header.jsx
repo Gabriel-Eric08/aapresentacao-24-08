@@ -1,4 +1,4 @@
-import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles } from 'lucide-react'
+import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles, Users2, ClipboardList, Store } from 'lucide-react'
 
 export default function Header({
   mesorregioes,
@@ -14,6 +14,8 @@ export default function Header({
   compareMode,
   setCompareMode,
   onExportar,
+  abaAtiva,
+  setAbaAtiva,
 }) {
   return (
     <header data-no-print className="sticky top-0 z-30 bg-gradient-to-r from-institucional-deep to-institucional-vibrant text-white shadow-lg">
@@ -31,19 +33,21 @@ export default function Header({
           <div className="flex items-center gap-2">
             <span className="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold bg-institucional-amber/20 text-amber-100 border border-amber-300/40 rounded-full px-3 py-1.5">
               <Sparkles size={13} />
-              Modo: Dados Demonstrativos (Pronto para Carga Real)
+              Base de Dados Real — SecMulher-PE
             </span>
-            <button
-              onClick={() => setCompareMode((v) => !v)}
-              className={`inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold rounded-lg px-3 py-2 border transition ${
-                compareMode
-                  ? 'bg-institucional-amber text-white border-institucional-amber'
-                  : 'bg-white/10 text-white border-white/25 hover:bg-white/20'
-              }`}
-            >
-              <GitCompare size={16} />
-              Comparar Municípios
-            </button>
+            {abaAtiva === 'militancia' && (
+              <button
+                onClick={() => setCompareMode((v) => !v)}
+                className={`inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold rounded-lg px-3 py-2 border transition ${
+                  compareMode
+                    ? 'bg-institucional-amber text-white border-institucional-amber'
+                    : 'bg-white/10 text-white border-white/25 hover:bg-white/20'
+                }`}
+              >
+                <GitCompare size={16} />
+                Comparar Municípios
+              </button>
+            )}
             <button
               onClick={() => setLgpdOn((v) => !v)}
               className={`inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold rounded-lg px-3 py-2 border transition ${
@@ -66,6 +70,40 @@ export default function Header({
           </div>
         </div>
 
+        <div className="mt-3 flex items-center gap-1.5">
+          <button
+            onClick={() => setAbaAtiva('militancia')}
+            className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
+              abaAtiva === 'militancia'
+                ? 'bg-white text-institucional-deep'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <Users2 size={15} /> Militância
+          </button>
+          <button
+            onClick={() => setAbaAtiva('dados')}
+            className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
+              abaAtiva === 'dados'
+                ? 'bg-white text-institucional-deep'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <ClipboardList size={15} /> Dados
+          </button>
+          <button
+            onClick={() => setAbaAtiva('programas')}
+            className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
+              abaAtiva === 'programas'
+                ? 'bg-white text-institucional-deep'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <Store size={15} /> Programas
+          </button>
+        </div>
+
+        {abaAtiva === 'militancia' && (
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <select
             value={filtroMesorregiao}
@@ -100,6 +138,7 @@ export default function Header({
             />
           </div>
         </div>
+        )}
       </div>
     </header>
   )

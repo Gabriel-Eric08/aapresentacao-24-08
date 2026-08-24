@@ -5,10 +5,9 @@ import { escalaRoxo, formatarNumero } from '../utils/helpers'
 const COR_SEM_DADOS = '#EDE9FE'
 
 // Mapa real de Pernambuco: contorno de cada um dos 184 municípios (dados
-// públicos do IBGE), coloridos em escala coroplética de roxo para os
-// municípios com ficha detalhada nesta amostra. Os demais aparecem em
-// cinza-roxo neutro — cobertura territorial confirmada, mas sem
-// detalhamento nesta base demonstrativa.
+// públicos do IBGE), coloridos em escala coroplética de roxo conforme a
+// concentração relativa de militantes mapeados. Municípios sem nenhum
+// militante identificado aparecem em cinza-roxo neutro.
 export default function PernambucoMap({
   dadosPorId,
   idsVisiveis,
@@ -84,12 +83,12 @@ export default function PernambucoMap({
           {hover.dados ? (
             <>
               <div className="flex justify-between text-xs">
-                <span className="text-gray-500">% Militantes</span>
+                <span className="text-gray-500">Concentração relativa</span>
                 <span className="font-semibold text-institucional-textAlt">{hover.dados.percentualMilitantes}%</span>
               </div>
               <div className="flex justify-between text-xs mt-0.5">
-                <span className="text-gray-500">Estruturas SecMulher</span>
-                <span className="font-semibold text-institucional-textAlt">{hover.dados.estruturas.length}</span>
+                <span className="text-gray-500">Bairros mapeados</span>
+                <span className="font-semibold text-institucional-textAlt">{hover.dados.topBairros.length}</span>
               </div>
               <div className="flex justify-between text-xs mt-0.5">
                 <span className="text-gray-500">Militantes</span>
@@ -97,7 +96,7 @@ export default function PernambucoMap({
               </div>
             </>
           ) : (
-            <p className="text-xs text-gray-500">Cobertura territorial confirmada — sem ficha detalhada nesta amostra.</p>
+            <p className="text-xs text-gray-500">Nenhum militante identificado neste município.</p>
           )}
         </div>
       )}
@@ -108,7 +107,7 @@ export default function PernambucoMap({
         <span className="text-xs text-gray-500">Maior militância</span>
       </div>
       <p className="text-[11px] text-gray-400 mt-1.5 px-1">
-        Municípios em cinza-roxo neutro: cobertura territorial confirmada, ficha ainda não detalhada nesta amostra demonstrativa.
+        Municípios em cinza-roxo neutro: nenhum militante identificado (bairro/setor) nas planilhas carregadas.
       </p>
     </div>
   )
