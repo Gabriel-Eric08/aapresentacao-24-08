@@ -111,6 +111,19 @@ export default function App() {
   const municipioA = useMemo(() => municipios.find((m) => m.id === compareIdA) ?? null, [municipios, compareIdA])
   const municipioB = useMemo(() => municipios.find((m) => m.id === compareIdB) ?? null, [municipios, compareIdB])
 
+  // Regiões de Desenvolvimento (RD) — cada uma tem uma Coordenadora Regional
+  // própria. Derivado da própria base (setor "Coordenadora Regional ..."),
+  // não de uma lista separada, pra nunca ficar desatualizado.
+  const coordenadorasRegionais = useMemo(() => {
+    return municipios
+      .flatMap((m) =>
+        m.pessoas
+          .filter((p) => p.setor?.startsWith('Coordenadora Regional'))
+          .map((p) => ({ regiao: p.setor, nome: p.nome, municipioId: m.id, municipioNome: m.nome }))
+      )
+      .sort((a, b) => a.regiao.localeCompare(b.regiao, 'pt-BR'))
+  }, [municipios])
+
   return (
     <div className="min-h-screen bg-institucional-bg">
       <div data-no-print>
@@ -130,6 +143,9 @@ export default function App() {
           onExportar={handleExportar}
           abaAtiva={abaAtiva}
           setAbaAtiva={setAbaAtiva}
+          coordenadorasRegionais={coordenadorasRegionais}
+          filtroRd={selectedMunicipioId}
+          setFiltroRd={(id) => setSelectedMunicipioId(id)}
         />
 
         <main className="max-w-[1600px] mx-auto px-4 sm:px-6 py-5 space-y-5">

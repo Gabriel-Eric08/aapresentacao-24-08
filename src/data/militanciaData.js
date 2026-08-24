@@ -18,13 +18,13 @@ export const MILITANCIA_DATA = {
     "modo": "producao"
   },
   "kpis": {
-    "totalMilitantes": 106,
+    "totalMilitantes": 111,
     "coberturaMunicipal": {
-      "atual": 19,
+      "atual": 23,
       "total": 184
     },
-    "setoresMapeados": 42,
-    "bairrosMapeados": 76
+    "setoresMapeados": 47,
+    "bairrosMapeados": 80
   },
   "mesorregioes": [
     "RMR",
@@ -48,12 +48,17 @@ export const MILITANCIA_DATA = {
     "Chefe de Gabinete",
     "Comunicação",
     "Cooordenadora Adjunta de Controla Interno",
+    "Coordenadora Regional da Mata Norte",
     "Coordenadora Regional da Mata Sul",
     "Coordenadora Regional do Agreste Central",
     "Coordenadora Regional do Agreste Meridional",
     "Coordenadora Regional do Agreste Setentrional",
+    "Coordenadora Regional do Sertão Central",
+    "Coordenadora Regional do Sertão de Itaparica",
+    "Coordenadora Regional do Sertão do Araripe",
     "Coordenadora Regional do Sertão do Moxotó",
     "Coordenadora Regional do Sertão do Pajeú",
+    "Coordenadora Regional do Sertão do São Francisco",
     "Coordenadora Regional Metropolitana",
     "DEVG 190",
     "DIPLAG",
@@ -118,6 +123,28 @@ export const MILITANCIA_DATA = {
           "setor": "Coordenadora Regional da Mata Sul",
           "bairro": "Cohab",
           "contato": "+55 81 8904-2538"
+        }
+      ]
+    },
+    {
+      "id": "araripina",
+      "nome": "Araripina",
+      "mesorregiao": "Sertão",
+      "totalMilitantes": 1,
+      "percentualMilitantes": 2.3,
+      "topBairros": [
+        {
+          "bairro": "Centro",
+          "militantes": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "araripina-1",
+          "nome": "Maria Patrícia Santos da Silva",
+          "setor": "Coordenadora Regional do Sertão do Araripe",
+          "bairro": "Centro",
+          "contato": "+55 87 99907-7022"
         }
       ]
     },
@@ -213,11 +240,15 @@ export const MILITANCIA_DATA = {
       "id": "carpina",
       "nome": "Carpina",
       "mesorregiao": "Zona da Mata",
-      "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "totalMilitantes": 2,
+      "percentualMilitantes": 4.7,
       "topBairros": [
         {
           "bairro": "Lot. Santana",
+          "militantes": 1
+        },
+        {
+          "bairro": "Nova Carpina",
           "militantes": 1
         }
       ],
@@ -228,6 +259,13 @@ export const MILITANCIA_DATA = {
           "setor": "CAJ",
           "bairro": "Lot. Santana",
           "contato": "55 81 9721-2446"
+        },
+        {
+          "id": "carpina-2",
+          "nome": "Nivaldielly Esttefany de Souza Lourenço",
+          "setor": "Coordenadora Regional da Mata Norte",
+          "bairro": "Nova Carpina",
+          "contato": "+55 81 99457-0435"
         }
       ]
     },
@@ -283,6 +321,28 @@ export const MILITANCIA_DATA = {
           "setor": "GERAI",
           "bairro": "Universitário",
           "contato": "+55 81 8208-5891"
+        }
+      ]
+    },
+    {
+      "id": "floresta",
+      "nome": "Floresta",
+      "mesorregiao": "Sertão",
+      "totalMilitantes": 1,
+      "percentualMilitantes": 2.3,
+      "topBairros": [
+        {
+          "bairro": "Santa Rosa",
+          "militantes": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "floresta-1",
+          "nome": "Jamile Mariana do Nascimento",
+          "setor": "Coordenadora Regional do Sertão de Itaparica",
+          "bairro": "Santa Rosa",
+          "contato": "+55 87 99635-5646"
         }
       ]
     },
@@ -807,6 +867,28 @@ export const MILITANCIA_DATA = {
       ]
     },
     {
+      "id": "petrolina",
+      "nome": "Petrolina",
+      "mesorregiao": "Sertão",
+      "totalMilitantes": 1,
+      "percentualMilitantes": 2.3,
+      "topBairros": [
+        {
+          "bairro": "Pedra do Bode",
+          "militantes": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "petrolina-1",
+          "nome": "Ana Raquel Macedo Amorim Barbosa",
+          "setor": "Coordenadora Regional do Sertão do São Francisco",
+          "bairro": "Pedra do Bode",
+          "contato": "+55 87 98122-5595"
+        }
+      ]
+    },
+    {
       "id": "recife",
       "nome": "Recife",
       "mesorregiao": "RMR",
@@ -1135,6 +1217,28 @@ export const MILITANCIA_DATA = {
           "setor": "DIPLAG",
           "bairro": "Afogados",
           "contato": "+55 81 9556-2283"
+        }
+      ]
+    },
+    {
+      "id": "salgueiro",
+      "nome": "Salgueiro",
+      "mesorregiao": "Sertão",
+      "totalMilitantes": 1,
+      "percentualMilitantes": 2.3,
+      "topBairros": [
+        {
+          "bairro": "Nossa Senhora Aparecida",
+          "militantes": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "salgueiro-1",
+          "nome": "Maria Cristina Barros da Costa",
+          "setor": "Coordenadora Regional do Sertão Central",
+          "bairro": "Nossa Senhora Aparecida",
+          "contato": "+55 87 98805-9844"
         }
       ]
     },

@@ -21,6 +21,9 @@ export default function Header({
   onExportar,
   abaAtiva,
   setAbaAtiva,
+  coordenadorasRegionais,
+  filtroRd,
+  setFiltroRd,
 }) {
   return (
     <header data-no-print className="sticky top-0 z-30 bg-gradient-to-r from-institucional-deep to-institucional-vibrant text-white shadow-lg">
@@ -134,6 +137,21 @@ export default function Header({
               <option key={m} value={m}>{m}</option>
             ))}
           </select>
+
+          {coordenadorasRegionais?.length > 0 && (
+            <select
+              value={filtroRd ?? ''}
+              onChange={(e) => setFiltroRd(e.target.value || null)}
+              className="text-sm rounded-lg border border-white/25 bg-white/10 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-institucional-amber [&>option]:text-gray-900"
+            >
+              <option value="">Todas as RDs (Região de Desenvolvimento)</option>
+              {coordenadorasRegionais.map((c) => (
+                <option key={c.municipioId} value={c.municipioId}>
+                  {c.regiao.replace('Coordenadora Regional ', '')} — {c.nome}
+                </option>
+              ))}
+            </select>
+          )}
 
           <select
             value={filtroSetor}
