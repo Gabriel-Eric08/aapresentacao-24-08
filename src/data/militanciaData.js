@@ -31,7 +31,7 @@ export const MILITANCIA_DATA = {
       "total": 184
     },
     "setoresMapeados": 44,
-    "bairrosMapeados": 46
+    "bairrosMapeados": 47
   },
   "mesorregioes": [
     "RMR",
@@ -438,8 +438,8 @@ export const MILITANCIA_DATA = {
       "id": "olinda",
       "nome": "Olinda",
       "mesorregiao": "RMR",
-      "totalMilitantes": 5,
-      "percentualMilitantes": 7.5,
+      "totalMilitantes": 6,
+      "percentualMilitantes": 9,
       "topBairros": [
         {
           "bairro": "Bom Sucesso",
@@ -447,6 +447,10 @@ export const MILITANCIA_DATA = {
         },
         {
           "bairro": "Caixa D´agua",
+          "militantes": 1
+        },
+        {
+          "bairro": "Jardim Fragoso",
           "militantes": 1
         },
         {
@@ -459,6 +463,13 @@ export const MILITANCIA_DATA = {
         }
       ],
       "pessoas": [
+        {
+          "id": "olinda-4",
+          "nome": "Ana Paula",
+          "setor": null,
+          "bairro": "Jardim Fragoso",
+          "contato": "+55 81 8422-8338"
+        },
         {
           "id": "olinda-2",
           "nome": "elimarcos cordeiro",
@@ -474,14 +485,14 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9647-1372"
         },
         {
-          "id": "olinda-5",
+          "id": "olinda-6",
           "nome": "Janaína Ribeiro",
           "setor": "GEFSP E GEFV",
           "bairro": "Rio Doce",
           "contato": null
         },
         {
-          "id": "olinda-4",
+          "id": "olinda-5",
           "nome": "Roberta Peregrino",
           "setor": "GERAI",
           "bairro": null,
@@ -1243,14 +1254,6 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-10",
-      "nome": "Paola",
-      "contato": "+55 81 8422-8338",
-      "setor": null,
-      "bairro": null,
-      "municipio": null
-    },
-    {
-      "id": "pendencia-11",
       "nome": "Renan Wilma",
       "contato": "+55 81 8549-3417",
       "setor": null,
@@ -1258,7 +1261,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-12",
+      "id": "pendencia-11",
       "nome": "Severino dos Ramos de Souza",
       "contato": "+55 81 8594-8914",
       "setor": "Motorista",
@@ -1266,7 +1269,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-13",
+      "id": "pendencia-12",
       "nome": "Toninho",
       "contato": "+55 81 9576-4140",
       "setor": null,
@@ -1274,7 +1277,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-14",
+      "id": "pendencia-13",
       "nome": "Vitotia Silva",
       "contato": "+55 81 9326-9320",
       "setor": "Diplag UPL",
@@ -1282,7 +1285,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-15",
+      "id": "pendencia-14",
       "nome": "Alina Roberta",
       "contato": null,
       "setor": "CAJ",
@@ -1290,7 +1293,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-16",
+      "id": "pendencia-15",
       "nome": "Maria Luiza",
       "contato": null,
       "setor": "CAJ",

@@ -352,6 +352,7 @@ const CORRECAO_FINAL_POR_TELEFONE = {
   '99187119': { setor: 'Assessor Administrativo', municipio: 'Recife' }, // Marie — TERCEIRIZADOS: Marielse Fortes
   '88386532': { setor: 'Motorista', municipio: 'Recife' }, // Paulo Tadeu — TERCEIRIZADOS: Paulo Tadeu Salviano Prado
   '88770734': { nome: 'Maria Rosineide da Silva', setor: 'Coordenadora Regional do Sertão do Pajeú', bairro: 'AABB', municipio: 'Serra Talhada' }, // era "Rose Silva" — Planilha_Relacao_de_Pessoal
+  '84228338': { nome: 'Ana Paula', bairro: 'Jardim Fragoso', municipio: 'Olinda' }, // era "Paola"
   // "Wanildo Neto" (era "Neto SecMul") e "Wanildo Pinto" são a mesma pessoa
   // (confirmado) — telefone de "Wanildo Pinto" excluído em
   // CONTATOS_EXCLUIR_POR_TELEFONE e trazido aqui como 2º contato.
