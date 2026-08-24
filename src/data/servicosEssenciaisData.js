@@ -16,11 +16,448 @@ export const SERVICOS_ESSENCIAIS_DATA = {
     "ultimaAtualizacao": "2026-08-24"
   },
   "kpis": {
-    "totalFuncionarios": 108,
-    "totalUnidades": 6,
+    "totalFuncionarios": 147,
+    "totalUnidades": 7,
     "cargosDistintos": 14
   },
   "unidades": [
+    {
+      "id": "jerusa",
+      "nome": "Jerusa",
+      "totalFuncionarios": 38,
+      "cargos": [
+        {
+          "cargo": "Vigilante",
+          "total": 8
+        },
+        {
+          "cargo": "Técnico Enfermagem",
+          "total": 4
+        },
+        {
+          "cargo": "Apoio Administrativo",
+          "total": 4
+        },
+        {
+          "cargo": "Assistente Social",
+          "total": 4
+        },
+        {
+          "cargo": "Motorista",
+          "total": 4
+        },
+        {
+          "cargo": "Educadora Social",
+          "total": 4
+        },
+        {
+          "cargo": "Psicóloga",
+          "total": 2
+        },
+        {
+          "cargo": "Pedagoga",
+          "total": 2
+        },
+        {
+          "cargo": "Cozinheira",
+          "total": 2
+        },
+        {
+          "cargo": "Auxiliar Serviços Gerais",
+          "total": 2
+        },
+        {
+          "cargo": "Ajudante",
+          "total": 1
+        },
+        {
+          "cargo": "Advogada",
+          "total": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "jerusa-1",
+          "nome": "Adriane Mendes de Andrade",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-2",
+          "nome": "Aline Daniela da Silva",
+          "cargo": "Técnico Enfermagem",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-3",
+          "nome": "Amanda Siqueira Acioli Souto",
+          "cargo": "Psicóloga",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-4",
+          "nome": "Ana Josilaide Aquino",
+          "cargo": "Pedagoga",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "13/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-5",
+          "nome": "Ana Paula de Oliveira Mota",
+          "cargo": "Apoio Administrativo",
+          "unidade": "Jerusa",
+          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
+          "admissao": "02/04/2025",
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-6",
+          "nome": "Beatriz Mendonça Azevedo",
+          "cargo": "Psicóloga",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "03/06/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-7",
+          "nome": "Carina Xavier",
+          "cargo": "Assistente Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-8",
+          "nome": "Edilene Maria de França",
+          "cargo": "Cozinheira",
+          "unidade": "Jerusa",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": "13/06/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-9",
+          "nome": "Elaine Lopes Gomes",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-10",
+          "nome": "Franciane Cecilia Oliveira",
+          "cargo": "Assistente Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "03/06/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-11",
+          "nome": "Gizeli Gomes da Silva",
+          "cargo": "Apoio Administrativo",
+          "unidade": "Jerusa",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": null,
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-12",
+          "nome": "Helena Maria Monteiro de Lima",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-13",
+          "nome": "Italo Francisco de Paula",
+          "cargo": "Motorista",
+          "unidade": "Jerusa",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-14",
+          "nome": "Juliana Araujo Santos",
+          "cargo": "Educadora Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-15",
+          "nome": "Katia da Silva Sales - Em Processo",
+          "cargo": "Apoio Administrativo",
+          "unidade": "Jerusa",
+          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
+          "admissao": null,
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-16",
+          "nome": "Márcia de Paula",
+          "cargo": "Cozinheira",
+          "unidade": "Jerusa",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": "16/06/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-17",
+          "nome": "Maria Betânia da Silva",
+          "cargo": "Apoio Administrativo",
+          "unidade": "Jerusa",
+          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
+          "admissao": "02/06/2025",
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-18",
+          "nome": "Maria Edina de Almeida",
+          "cargo": "Técnico Enfermagem",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-19",
+          "nome": "Maria Rosângela da Conceição",
+          "cargo": "Auxiliar Serviços Gerais",
+          "unidade": "Jerusa",
+          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
+          "admissao": "24/04/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-20",
+          "nome": "Marlon Fernando de Freitas",
+          "cargo": "Motorista",
+          "unidade": "Jerusa",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": "16/05/2026",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-21",
+          "nome": "Mércia Maria Santana",
+          "cargo": "Ajudante",
+          "unidade": "Jerusa",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": "01/07/2026",
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-22",
+          "nome": "Michelle da Silva Santos",
+          "cargo": "Técnico Enfermagem",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-23",
+          "nome": "Midiã Cordeiro de Lima Ramos",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-24",
+          "nome": "Patricia Dayse V Soares",
+          "cargo": "Assistente Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "03/06/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-25",
+          "nome": "Paula Adriana Albuquerque",
+          "cargo": "Técnico Enfermagem",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-26",
+          "nome": "Pedriane Maria de Alcanatara",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-27",
+          "nome": "Pollyana Inajar Alves da Silva",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-28",
+          "nome": "Raquel Silva Rocha",
+          "cargo": "Auxiliar Serviços Gerais",
+          "unidade": "Jerusa",
+          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
+          "admissao": "24/04/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-29",
+          "nome": "Roberlan José da Silva",
+          "cargo": "Motorista",
+          "unidade": "Jerusa",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": "24/11/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-30",
+          "nome": "Sandra Maria de Oliveira",
+          "cargo": "Pedagoga",
+          "unidade": "Jerusa",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "25/06/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-31",
+          "nome": "Severino dos Ramos de Souza",
+          "cargo": "Motorista",
+          "unidade": "Jerusa",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": "01/07/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-32",
+          "nome": "Sheila da Silva Ferreira",
+          "cargo": "Assistente Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "03/06/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-33",
+          "nome": "Suely Barbosa da Silva",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-34",
+          "nome": "Tayse Mayara Alves S. M. Barbosa",
+          "cargo": "Vigilante",
+          "unidade": "Jerusa",
+          "empresaContratada": "ÁGUIA VIGILÂNCIA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-35",
+          "nome": "Verônica Tomaz",
+          "cargo": "Educadora Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-36",
+          "nome": "Vitoria Tamires",
+          "cargo": "Educadora Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "jerusa-37",
+          "nome": "Viviane Maria Felix de Oliveira",
+          "cargo": "Educadora Social",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "jerusa-38",
+          "nome": "Wiliane Oliveira",
+          "cargo": "Advogada",
+          "unidade": "Jerusa",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "03/06/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        }
+      ]
+    },
     {
       "id": "marici",
       "nome": "Marici",
@@ -365,6 +802,329 @@ export const SERVICOS_ESSENCIAIS_DATA = {
           "admissao": "01/07/2026",
           "jornada": "12/36",
           "turno": "Noturno"
+        }
+      ]
+    },
+    {
+      "id": "cristina",
+      "nome": "Cristina",
+      "totalFuncionarios": 27,
+      "cargos": [
+        {
+          "cargo": "Assistente Social",
+          "total": 4
+        },
+        {
+          "cargo": "Motorista",
+          "total": 4
+        },
+        {
+          "cargo": "Vigilante",
+          "total": 4
+        },
+        {
+          "cargo": "Educadora Social",
+          "total": 3
+        },
+        {
+          "cargo": "Pedagoga",
+          "total": 2
+        },
+        {
+          "cargo": "Psicóloga",
+          "total": 2
+        },
+        {
+          "cargo": "Advogada",
+          "total": 2
+        },
+        {
+          "cargo": "Auxiliar Serviços Gerais",
+          "total": 2
+        },
+        {
+          "cargo": "Cozinheira",
+          "total": 2
+        },
+        {
+          "cargo": "Apoio Administrativo",
+          "total": 1
+        },
+        {
+          "cargo": "Técnico Enfermagem",
+          "total": 1
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "cristina-1",
+          "nome": "Alessandra",
+          "cargo": "Pedagoga",
+          "unidade": "Cristina",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-2",
+          "nome": "Ana Kallynne Lins de Melo Bezerra",
+          "cargo": "Assistente Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-3",
+          "nome": "Ana Paula Santos",
+          "cargo": "Psicóloga",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-4",
+          "nome": "Andre Luiz dos Santos",
+          "cargo": "Motorista",
+          "unidade": "Cristina",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": "15/08/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-5",
+          "nome": "Andrea Antônio da Silva Freitas",
+          "cargo": "Vigilante",
+          "unidade": "Cristina",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "02/12/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-6",
+          "nome": "Andréia Fabiana Francisca",
+          "cargo": "Assistente Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/08/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-7",
+          "nome": "Andreza Roberta dos Santos Silva",
+          "cargo": "Advogada",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-8",
+          "nome": "Cláudio José Soares",
+          "cargo": "Motorista",
+          "unidade": "Cristina",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "20/05/2026",
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-9",
+          "nome": "Cristiane Lopes Cabral",
+          "cargo": "Apoio Administrativo",
+          "unidade": "Cristina",
+          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
+          "admissao": "07/03/2026",
+          "jornada": "44",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-10",
+          "nome": "Elias Domingos da Silva",
+          "cargo": "Vigilante",
+          "unidade": "Cristina",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "18/07/1905",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-11",
+          "nome": "Gleicy Gabrielle Pereira do Carmo",
+          "cargo": "Técnico Enfermagem",
+          "unidade": "Cristina",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-12",
+          "nome": "Helena Carla Andrade Barros",
+          "cargo": "Psicóloga",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-13",
+          "nome": "Jackeline Ferreira da Cruz",
+          "cargo": "Auxiliar Serviços Gerais",
+          "unidade": "Cristina",
+          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
+          "admissao": "19/05/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-14",
+          "nome": "Jacqueline da Silva Virginio",
+          "cargo": "Assistente Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-15",
+          "nome": "Kaline Santana",
+          "cargo": "Educadora Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-16",
+          "nome": "Lomarca Silva de Lima",
+          "cargo": "Pedagoga",
+          "unidade": "Cristina",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": "01/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-17",
+          "nome": "Marcilene José Valentim",
+          "cargo": "Cozinheira",
+          "unidade": "Cristina",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": "20/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-18",
+          "nome": "Maria Patricia Almeida - Em Processo",
+          "cargo": "Auxiliar Serviços Gerais",
+          "unidade": "Cristina",
+          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
+          "admissao": null,
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-19",
+          "nome": "Marise Medeiros Belo da Silva",
+          "cargo": "Cozinheira",
+          "unidade": "Cristina",
+          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
+          "admissao": "20/07/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-20",
+          "nome": "Risa Carolina Teles",
+          "cargo": "Educadora Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-21",
+          "nome": "Rodrigo Ferreira",
+          "cargo": "Vigilante",
+          "unidade": "Cristina",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "18/07/1905",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-22",
+          "nome": "Rodrigo Lourenço dos Anjos Santos",
+          "cargo": "Motorista",
+          "unidade": "Cristina",
+          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
+          "admissao": "00/08/2025",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-23",
+          "nome": "Sara Cristina Alves da Silva Jorge",
+          "cargo": "Educadora Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-24",
+          "nome": "Suelayne Silva do Nascimento",
+          "cargo": "Assistente Social",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-25",
+          "nome": "Thalita Gonçalves da Silva",
+          "cargo": "Advogada",
+          "unidade": "Cristina",
+          "empresaContratada": "JMF CONSTRUÇÕES SERVIÇOS E MANUTENÇÃOPREDIAL LTDA",
+          "admissao": "01/07/2026",
+          "jornada": null,
+          "turno": "Diurno"
+        },
+        {
+          "id": "cristina-26",
+          "nome": "Valmir da Silva Araujo",
+          "cargo": "Vigilante",
+          "unidade": "Cristina",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "18/07/1905",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "cristina-27",
+          "nome": "Wanildo Fernandes Pinto Júnior",
+          "cargo": "Motorista",
+          "unidade": "Cristina",
+          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
+          "admissao": null,
+          "jornada": "44",
+          "turno": "Diurno"
         }
       ]
     },
@@ -917,364 +1677,6 @@ export const SERVICOS_ESSENCIAIS_DATA = {
       ]
     },
     {
-      "id": "jerusa",
-      "nome": "Jerusa",
-      "totalFuncionarios": 21,
-      "cargos": [
-        {
-          "cargo": "Vigilante",
-          "total": 8
-        },
-        {
-          "cargo": "Apoio Administrativo",
-          "total": 4
-        },
-        {
-          "cargo": "Motorista",
-          "total": 4
-        },
-        {
-          "cargo": "Cozinheira",
-          "total": 2
-        },
-        {
-          "cargo": "Auxiliar Serviços Gerais",
-          "total": 2
-        },
-        {
-          "cargo": "Ajudante",
-          "total": 1
-        }
-      ],
-      "pessoas": [
-        {
-          "id": "jerusa-1",
-          "nome": "Adriane Mendes de Andrade",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-2",
-          "nome": "Ana Paula de Oliveira Mota",
-          "cargo": "Apoio Administrativo",
-          "unidade": "Jerusa",
-          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
-          "admissao": "02/04/2025",
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-3",
-          "nome": "Edilene Maria de França",
-          "cargo": "Cozinheira",
-          "unidade": "Jerusa",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": "13/06/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-4",
-          "nome": "Elaine Lopes Gomes",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jerusa-5",
-          "nome": "Gizeli Gomes da Silva",
-          "cargo": "Apoio Administrativo",
-          "unidade": "Jerusa",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": null,
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-6",
-          "nome": "Helena Maria Monteiro de Lima",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-7",
-          "nome": "Italo Francisco de Paula",
-          "cargo": "Motorista",
-          "unidade": "Jerusa",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jerusa-8",
-          "nome": "Katia da Silva Sales - Em Processo",
-          "cargo": "Apoio Administrativo",
-          "unidade": "Jerusa",
-          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
-          "admissao": null,
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-9",
-          "nome": "Márcia de Paula",
-          "cargo": "Cozinheira",
-          "unidade": "Jerusa",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": "16/06/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-10",
-          "nome": "Maria Betânia da Silva",
-          "cargo": "Apoio Administrativo",
-          "unidade": "Jerusa",
-          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
-          "admissao": "02/06/2025",
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-11",
-          "nome": "Maria Rosângela da Conceição",
-          "cargo": "Auxiliar Serviços Gerais",
-          "unidade": "Jerusa",
-          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
-          "admissao": "24/04/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-12",
-          "nome": "Marlon Fernando de Freitas",
-          "cargo": "Motorista",
-          "unidade": "Jerusa",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": "16/05/2026",
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jerusa-13",
-          "nome": "Mércia Maria Santana",
-          "cargo": "Ajudante",
-          "unidade": "Jerusa",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": "01/07/2026",
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-14",
-          "nome": "Midiã Cordeiro de Lima Ramos",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-15",
-          "nome": "Pedriane Maria de Alcanatara",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jerusa-16",
-          "nome": "Pollyana Inajar Alves da Silva",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jerusa-17",
-          "nome": "Raquel Silva Rocha",
-          "cargo": "Auxiliar Serviços Gerais",
-          "unidade": "Jerusa",
-          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
-          "admissao": "24/04/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-18",
-          "nome": "Roberlan José da Silva",
-          "cargo": "Motorista",
-          "unidade": "Jerusa",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": "24/11/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-19",
-          "nome": "Severino dos Ramos de Souza",
-          "cargo": "Motorista",
-          "unidade": "Jerusa",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": "01/07/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-20",
-          "nome": "Suely Barbosa da Silva",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jerusa-21",
-          "nome": "Tayse Mayara Alves S. M. Barbosa",
-          "cargo": "Vigilante",
-          "unidade": "Jerusa",
-          "empresaContratada": "ÁGUIA VIGILÂNCIA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Noturno"
-        }
-      ]
-    },
-    {
-      "id": "cristina",
-      "nome": "Cristina",
-      "totalFuncionarios": 9,
-      "cargos": [
-        {
-          "cargo": "Motorista",
-          "total": 4
-        },
-        {
-          "cargo": "Auxiliar Serviços Gerais",
-          "total": 2
-        },
-        {
-          "cargo": "Cozinheira",
-          "total": 2
-        },
-        {
-          "cargo": "Apoio Administrativo",
-          "total": 1
-        }
-      ],
-      "pessoas": [
-        {
-          "id": "cristina-1",
-          "nome": "Andre Luiz dos Santos",
-          "cargo": "Motorista",
-          "unidade": "Cristina",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": "15/08/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-2",
-          "nome": "Cláudio José Soares",
-          "cargo": "Motorista",
-          "unidade": "Cristina",
-          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
-          "admissao": "20/05/2026",
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-3",
-          "nome": "Cristiane Lopes Cabral",
-          "cargo": "Apoio Administrativo",
-          "unidade": "Cristina",
-          "empresaContratada": "SERCOSERV SERVIÇOS TERCEIRIZADOS LTDA",
-          "admissao": "07/03/2026",
-          "jornada": "44",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-4",
-          "nome": "Jackeline Ferreira da Cruz",
-          "cargo": "Auxiliar Serviços Gerais",
-          "unidade": "Cristina",
-          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
-          "admissao": "19/05/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-5",
-          "nome": "Marcilene José Valentim",
-          "cargo": "Cozinheira",
-          "unidade": "Cristina",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": "20/07/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-6",
-          "nome": "Maria Patricia Almeida - Em Processo",
-          "cargo": "Auxiliar Serviços Gerais",
-          "unidade": "Cristina",
-          "empresaContratada": "FUNCIONAL TERCEIRIZAÇÃO E PROMOÇÃO DE EVENTOS LTDA",
-          "admissao": null,
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-7",
-          "nome": "Marise Medeiros Belo da Silva",
-          "cargo": "Cozinheira",
-          "unidade": "Cristina",
-          "empresaContratada": "RM TERCEIRIZAÇÃO E GESTÃO DE RECURSOS HUMANOS",
-          "admissao": "20/07/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-8",
-          "nome": "Rodrigo Lourenço dos Anjos Santos",
-          "cargo": "Motorista",
-          "unidade": "Cristina",
-          "empresaContratada": "AJ SERVICOS DE MAO DE OBRA LTDA",
-          "admissao": "00/08/2025",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "cristina-9",
-          "nome": "Wanildo Fernandes Pinto Júnior",
-          "cargo": "Motorista",
-          "unidade": "Cristina",
-          "empresaContratada": "GESTÃO DE TERC EM SERVIÇOS SELEÇÃO E AGEN. DE MÃO DE OBRA",
-          "admissao": null,
-          "jornada": "44",
-          "turno": "Diurno"
-        }
-      ]
-    },
-    {
       "id": "caxanga",
       "nome": "Caxanga",
       "totalFuncionarios": 4,
@@ -1324,6 +1726,59 @@ export const SERVICOS_ESSENCIAIS_DATA = {
           "admissao": "01/06/2026",
           "jornada": "12/36",
           "turno": "Diurno"
+        }
+      ]
+    },
+    {
+      "id": "jiquia",
+      "nome": "Jiquiá",
+      "totalFuncionarios": 4,
+      "cargos": [
+        {
+          "cargo": "Vigilante",
+          "total": 4
+        }
+      ],
+      "pessoas": [
+        {
+          "id": "jiquia-1",
+          "nome": "Douglas Silva dos Santos",
+          "cargo": "Vigilante",
+          "unidade": "Jiquiá",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "04/04/2025",
+          "jornada": "12/36",
+          "turno": "Noturno"
+        },
+        {
+          "id": "jiquia-2",
+          "nome": "Glauber Gomes da Silva",
+          "cargo": "Vigilante",
+          "unidade": "Jiquiá",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "18/07/1905",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jiquia-3",
+          "nome": "José Ubiratan dos Santos",
+          "cargo": "Vigilante",
+          "unidade": "Jiquiá",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "06/04/2026",
+          "jornada": "12/36",
+          "turno": "Diurno"
+        },
+        {
+          "id": "jiquia-4",
+          "nome": "Sandro Belo de Gouveia",
+          "cargo": "Vigilante",
+          "unidade": "Jiquiá",
+          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
+          "admissao": "06/04/2026",
+          "jornada": "12/36",
+          "turno": "Noturno"
         }
       ]
     }
