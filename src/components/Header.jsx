@@ -1,5 +1,10 @@
 import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles, Users2, ClipboardList, Store } from 'lucide-react'
 
+// Abas ocultas temporariamente a pedido — troque pra true quando precisar
+// mostrar de novo.
+const MOSTRAR_ABA_DADOS = false
+const MOSTRAR_ABA_PROGRAMAS = false
+
 export default function Header({
   mesorregioes,
   setores,
@@ -81,6 +86,7 @@ export default function Header({
           >
             <Users2 size={15} /> Militância
           </button>
+          {MOSTRAR_ABA_DADOS && (
           <button
             onClick={() => setAbaAtiva('dados')}
             className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
@@ -91,6 +97,8 @@ export default function Header({
           >
             <ClipboardList size={15} /> Dados
           </button>
+          )}
+          {MOSTRAR_ABA_PROGRAMAS && (
           <button
             onClick={() => setAbaAtiva('programas')}
             className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
@@ -101,6 +109,7 @@ export default function Header({
           >
             <Store size={15} /> Programas
           </button>
+          )}
         </div>
 
         {abaAtiva === 'militancia' && (
