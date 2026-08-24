@@ -157,6 +157,7 @@ const CONTATOS_EXCLUIR_POR_TELEFONE = new Set([
   '84098289', // "Espaço Reluz" — não é pessoa
   '99288111', // "Wanildo Pinto" — mesma pessoa que "Wanildo Neto" (tel. 8105-7308, ver CORRECAO_FINAL_POR_TELEFONE)
   '85796953', // "Amor Só De Deus." — mesma pessoa que "Eduardo Florêncio" (tel. 9674-0834, ver CORRECAO_FINAL_POR_TELEFONE)
+  '81676432', // "Eletrica Express" — não é pessoa
 ])
 
 const csvRaw = fs.readFileSync(path.join(SRC_DIR, 'contatos.csv'), 'utf8')
@@ -350,6 +351,7 @@ const CORRECAO_FINAL_POR_TELEFONE = {
   '86058559': { setor: 'Técnico Admnistrativo', municipio: 'Recife' }, // Kerollen Virginia — TERCEIRIZADOS: Kerollen Virginia de França
   '99187119': { setor: 'Assessor Administrativo', municipio: 'Recife' }, // Marie — TERCEIRIZADOS: Marielse Fortes
   '88386532': { setor: 'Motorista', municipio: 'Recife' }, // Paulo Tadeu — TERCEIRIZADOS: Paulo Tadeu Salviano Prado
+  '88770734': { nome: 'Maria Rosineide da Silva', setor: 'Coordenadora Regional do Sertão do Pajeú', bairro: 'AABB', municipio: 'Serra Talhada' }, // era "Rose Silva" — Planilha_Relacao_de_Pessoal
   // "Wanildo Neto" (era "Neto SecMul") e "Wanildo Pinto" são a mesma pessoa
   // (confirmado) — telefone de "Wanildo Pinto" excluído em
   // CONTATOS_EXCLUIR_POR_TELEFONE e trazido aqui como 2º contato.

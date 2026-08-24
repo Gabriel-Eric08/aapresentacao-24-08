@@ -25,13 +25,13 @@ export const MILITANCIA_DATA = {
     "modo": "producao"
   },
   "kpis": {
-    "totalMilitantes": 126,
+    "totalMilitantes": 125,
     "coberturaMunicipal": {
       "atual": 18,
       "total": 184
     },
-    "setoresMapeados": 43,
-    "bairrosMapeados": 45
+    "setoresMapeados": 44,
+    "bairrosMapeados": 46
   },
   "mesorregioes": [
     "RMR",
@@ -60,6 +60,7 @@ export const MILITANCIA_DATA = {
     "Coordenadora Regional do Agreste Meridional",
     "Coordenadora Regional do Agreste Setentrional",
     "Coordenadora Regional do Sertão do Moxotó",
+    "Coordenadora Regional do Sertão do Pajeú",
     "Coordenadora Regional Metropolitana",
     "Cozinheira",
     "DEVG 190",
@@ -1141,9 +1142,14 @@ export const MILITANCIA_DATA = {
       "id": "serra-talhada",
       "nome": "Serra Talhada",
       "mesorregiao": "Sertão",
-      "totalMilitantes": 1,
-      "percentualMilitantes": 1.5,
-      "topBairros": [],
+      "totalMilitantes": 2,
+      "percentualMilitantes": 3,
+      "topBairros": [
+        {
+          "bairro": "AABB",
+          "militantes": 1
+        }
+      ],
       "pessoas": [
         {
           "id": "serra-talhada-1",
@@ -1151,6 +1157,13 @@ export const MILITANCIA_DATA = {
           "setor": "Motorista",
           "bairro": null,
           "contato": "+55 87 9995-3902"
+        },
+        {
+          "id": "serra-talhada-2",
+          "nome": "Maria Rosineide da Silva",
+          "setor": "Coordenadora Regional do Sertão do Pajeú",
+          "bairro": "AABB",
+          "contato": "+55 87 8877-0734"
         }
       ]
     }
@@ -1198,14 +1211,6 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-6",
-      "nome": "Eletrica Express",
-      "contato": "+55 87 8167-6432",
-      "setor": null,
-      "bairro": null,
-      "municipio": null
-    },
-    {
-      "id": "pendencia-7",
       "nome": "Gilvan Barbara",
       "contato": "+55 81 9745-1438",
       "setor": null,
@@ -1213,7 +1218,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-8",
+      "id": "pendencia-7",
       "nome": "Martha Araújo",
       "contato": "+55 81 9837-3326",
       "setor": null,
@@ -1221,7 +1226,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-9",
+      "id": "pendencia-8",
       "nome": "Mazé",
       "contato": "+55 81 8624-4473",
       "setor": null,
@@ -1229,7 +1234,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-10",
+      "id": "pendencia-9",
       "nome": "MIRO SOUZA",
       "contato": "+55 81 9412-3016",
       "setor": null,
@@ -1237,7 +1242,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-11",
+      "id": "pendencia-10",
       "nome": "Paola",
       "contato": "+55 81 8422-8338",
       "setor": null,
@@ -1245,7 +1250,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-12",
+      "id": "pendencia-11",
       "nome": "Renan Wilma",
       "contato": "+55 81 8549-3417",
       "setor": null,
@@ -1253,15 +1258,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-13",
-      "nome": "Rose Silva",
-      "contato": "+55 87 8877-0734",
-      "setor": null,
-      "bairro": null,
-      "municipio": null
-    },
-    {
-      "id": "pendencia-14",
+      "id": "pendencia-12",
       "nome": "Severino dos Ramos de Souza",
       "contato": "+55 81 8594-8914",
       "setor": "Motorista",
@@ -1269,7 +1266,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-15",
+      "id": "pendencia-13",
       "nome": "Toninho",
       "contato": "+55 81 9576-4140",
       "setor": null,
@@ -1277,7 +1274,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-16",
+      "id": "pendencia-14",
       "nome": "Vitotia Silva",
       "contato": "+55 81 9326-9320",
       "setor": "Diplag UPL",
@@ -1285,7 +1282,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-17",
+      "id": "pendencia-15",
       "nome": "Alina Roberta",
       "contato": null,
       "setor": "CAJ",
@@ -1293,7 +1290,7 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-18",
+      "id": "pendencia-16",
       "nome": "Maria Luiza",
       "contato": null,
       "setor": "CAJ",
