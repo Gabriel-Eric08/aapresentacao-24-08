@@ -331,7 +331,7 @@ const CORRECAO_FINAL_POR_TELEFONE = {
   '89690804': { nome: 'Jana Cruz', setor: 'Governanta', municipio: 'Recife' }, // era "Família Cruz Pessoa" — TERCEIRIZADOS: Janaina Ferreira da Cruz, Técnico Admnistrativo (setor Governanta mantido, já confirmado antes)
   '93269320': { nome: 'Vitotia Silva', setor: 'Diplag UPL' }, // era "Vi"
   '94883535': { nome: 'Daniele Souza', setor: 'DEVG 190', municipio: 'Recife' }, // era "Dani" — TERCEIRIZADOS: Danielle Souza Albuquerque 190 (setor DEVG 190 mantido, já confirmado antes)
-  '85493417': { nome: 'Renan Wilma' }, // era "renanwilma80@gmail.com"
+  '85493417': { nome: 'Wilma de Assis Neres', setor: 'Copeira', bairro: 'Ibura', municipio: 'Recife' }, // era "renanwilma80@gmail.com" / "Renan Wilma" — TERCEIRIZADOS: SERCOSERV
   '96958563': { nome: 'Ana Nery', setor: 'Auxiliar Serviços Gerais', municipio: 'Recife' }, // era "Ana Nery Jesus Minha Luz" — TERCEIRIZADOS: Ana Nery de Araujo
   '95590311': { setor: 'Comunicação', bairro: 'Piedade', municipio: 'Jaboatão dos Guararapes' }, // Emony
   '89405198': { nome: 'Gilvan Araújo', setor: 'Assessor Administrativo', municipio: 'Recife' }, // era "Gil SecMulher" — TERCEIRIZADOS: Gilvan de Araujo Pereira Filho
