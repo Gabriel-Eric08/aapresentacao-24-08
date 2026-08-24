@@ -1,13 +1,22 @@
 // Script de build (executado manualmente, não faz parte do runtime da app).
 // Gera src/data/servicosEssenciaisData.js a partir de
-// src/data/TERCEIRIZADOS SECMULHER - ELEIÇÃO.xlsx — puxa TODAS as linhas
-// cuja LOTAÇÃO é uma unidade de atendimento externo (Casa Abrigo, Casa
-// Passagem, Abrigamento, e as unidades específicas Adalgisa/Marici, que
-// aparecem tanto como LOTAÇÃO direta quanto como "município" de linhas
-// LOTAÇÃO=CASA ABRIGO — nome de código, já que endereço de casa abrigo é
-// sigiloso por segurança das acolhidas).
+// src/data/servicos-essenciais/casas-abrigo.xlsx — planilha curada
+// manualmente (revisada e corrigida por quem conhece a operação real das
+// unidades), com uma linha por funcionário e as colunas:
+//   Unidade (Casa Abrigo) | Nome | Cargo | Empresa Contratada | Admissão | Jornada | Turno
 //
-// Uso: node scripts/build-servicos-essenciais-data.mjs
+// Esse arquivo é a fonte de verdade da aba "Militância Serv. Essenciais" —
+// pra atualizar os dados, substitua casas-abrigo.xlsx por uma versão nova
+// (mesmas colunas) e rode:
+//   node scripts/build-servicos-essenciais-data.mjs
+//
+// Histórico: a primeira versão desses dados foi gerada automaticamente a
+// partir de TERCEIRIZADOS SECMULHER - ELEIÇÃO.xlsx (linhas com LOTAÇÃO de
+// unidade de acolhimento), exportada pra xlsx via
+// scripts/export-servicos-essenciais-xlsx.mjs, revisada manualmente e
+// devolvida — a unidade de várias pessoas mudou nessa revisão (a
+// atribuição automática por "município"/nome de código nem sempre batia
+// com a unidade real).
 
 import fs from 'node:fs'
 import path from 'node:path'
@@ -16,121 +25,39 @@ import XLSX from 'xlsx'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
-const TERCEIRIZADOS_FILE = path.join(ROOT, 'src/data/TERCEIRIZADOS SECMULHER - ELEIÇÃO.xlsx')
+const SRC_FILE = path.join(ROOT, 'src/data/servicos-essenciais/casas-abrigo.xlsx')
 const OUT_FILE = path.join(ROOT, 'src/data/servicosEssenciaisData.js')
 
-function normalize(s) {
-  return String(s || '').trim().toUpperCase().replace(/\s+/g, ' ')
-}
-
-const PALAVRAS_MINUSCULAS = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'a', 'o', 'as', 'os'])
-function titleCase(s) {
-  return String(s || '')
-    .trim()
-    .toLowerCase()
-    .split(' ')
-    .filter(Boolean)
-    .map((palavra, i) => {
-      if (i > 0 && PALAVRAS_MINUSCULAS.has(palavra)) return palavra
-      return palavra.charAt(0).toUpperCase() + palavra.slice(1)
-    })
-    .join(' ')
-}
-
-function limparNome(nome) {
-  return String(nome || '').replace(/\s+/g, ' ').trim()
-}
-
-// Serial de data do Excel (dias desde 1899-12-30) -> "DD/MM/AAAA".
-function formatarData(valor) {
-  if (!valor) return null
-  if (typeof valor === 'number') {
-    const utcDias = Math.floor(valor - 25569)
-    const data = new Date(utcDias * 86400 * 1000)
-    const dd = String(data.getUTCDate()).padStart(2, '0')
-    const mm = String(data.getUTCMonth() + 1).padStart(2, '0')
-    const yyyy = data.getUTCFullYear()
-    return `${dd}/${mm}/${yyyy}`
-  }
-  const str = String(valor).trim()
-  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(str)
-  if (m) {
-    const [, mes, dia, ano] = m
-    return `${dia.padStart(2, '0')}/${mes.padStart(2, '0')}/${ano}`
-  }
-  return str || null
-}
-
-// LOTAÇÃO que identifica trabalho externo em unidade de acolhimento/abrigo.
-const LOTACOES_SERVICOS_ESSENCIAIS = new Set([
-  'CASA ABRIGO',
-  'CASA',
-  'CASA MARICI',
-  'CASA PASSAGEM',
-  'ABRIGAMENTO',
-  'ADALGISA',
-  'MARICI',
-])
-
-// Nomes de unidade (código) que também aparecem na coluna
-// Cidade/Município quando LOTAÇÃO é o genérico "CASA ABRIGO"/"CASA" —
-// precisam cair na MESMA unidade que quando aparecem como LOTAÇÃO direta.
-const UNIDADE_POR_LOTACAO_ESPECIFICA = {
-  ADALGISA: 'Adalgisa',
-  MARICI: 'Marici',
-  'CASA MARICI': 'Marici',
-  'CASA PASSAGEM': 'Casa Passagem',
-}
-
-// Pequenos ajustes de nome pra ficar mais claro (nomes reais de município).
-const ALIAS_UNIDADE = {
-  CABO: 'Cabo de Santo Agostinho',
-}
-
-function resolverUnidade(lotacaoNorm, municipioRaw) {
-  if (UNIDADE_POR_LOTACAO_ESPECIFICA[lotacaoNorm]) return UNIDADE_POR_LOTACAO_ESPECIFICA[lotacaoNorm]
-  const municipioNorm = normalize(municipioRaw)
-  if (UNIDADE_POR_LOTACAO_ESPECIFICA[municipioNorm]) return UNIDADE_POR_LOTACAO_ESPECIFICA[municipioNorm]
-  if (ALIAS_UNIDADE[municipioNorm]) return ALIAS_UNIDADE[municipioNorm]
-  return titleCase(municipioRaw) || 'Não Identificada'
-}
-
-const wb = XLSX.readFile(TERCEIRIZADOS_FILE)
-const rows = XLSX.utils.sheet_to_json(wb.Sheets['Plan1'], { header: 1, defval: '' })
-
-const pessoas = []
-for (const r of rows) {
-  const lotacaoNorm = normalize(r[7])
-  if (!LOTACOES_SERVICOS_ESSENCIAIS.has(lotacaoNorm)) continue
-  const nome = limparNome(r[4])
-  if (!nome || nome.length < 3) continue
-  pessoas.push({
-    nome: titleCase(nome),
-    cargo: titleCase(String(r[6] || '').trim()) || null,
-    unidade: resolverUnidade(lotacaoNorm, r[8]),
-    empresaContratada: limparNome(r[3]) || null,
-    admissao: formatarData(r[5]),
-    jornada: String(r[9] || '').trim() || null,
-    turno: titleCase(String(r[10] || '').trim()) || null,
-  })
-}
-
-pessoas.sort((a, b) => a.unidade.localeCompare(b.unidade, 'pt-BR') || a.nome.localeCompare(b.nome, 'pt-BR'))
-
-// Agrupa por unidade (equivalente a "município" na base de Militância).
-const porUnidade = new Map()
-for (const p of pessoas) {
-  if (!porUnidade.has(p.unidade)) porUnidade.set(p.unidade, [])
-  porUnidade.get(p.unidade).push(p)
-}
-
 function slug(s) {
-  return s
+  return String(s || '')
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '')
+}
+
+const wb = XLSX.readFile(SRC_FILE)
+const rows = XLSX.utils.sheet_to_json(wb.Sheets['Serv Essenciais'], { defval: '' })
+
+const pessoas = rows
+  .filter((r) => String(r['Nome'] || '').trim())
+  .map((r) => ({
+    nome: String(r['Nome']).trim(),
+    cargo: String(r['Cargo'] || '').trim() || null,
+    unidade: String(r['Unidade (Casa Abrigo)'] || '').trim() || 'Não Identificada',
+    empresaContratada: String(r['Empresa Contratada'] || '').trim() || null,
+    admissao: String(r['Admissão'] || '').trim() || null,
+    jornada: String(r['Jornada'] || '').trim() || null,
+    turno: String(r['Turno'] || '').trim() || null,
+  }))
+
+pessoas.sort((a, b) => a.unidade.localeCompare(b.unidade, 'pt-BR') || a.nome.localeCompare(b.nome, 'pt-BR'))
+
+const porUnidade = new Map()
+for (const p of pessoas) {
+  if (!porUnidade.has(p.unidade)) porUnidade.set(p.unidade, [])
+  porUnidade.get(p.unidade).push(p)
 }
 
 const unidades = Array.from(porUnidade.entries())
@@ -158,7 +85,7 @@ const SERVICOS_ESSENCIAIS_DATA = {
   metadata: {
     orgao: 'Secretaria da Mulher de Pernambuco (SecMulher-PE)',
     painel: 'Militância — Serviços Essenciais (Casas Abrigo)',
-    fonte: 'TERCEIRIZADOS SECMULHER - ELEIÇÃO.xlsx',
+    fonte: 'src/data/servicos-essenciais/casas-abrigo.xlsx (planilha revisada manualmente)',
     ultimaAtualizacao: new Date().toISOString().slice(0, 10),
   },
   kpis: {
@@ -173,12 +100,9 @@ const header = `// =============================================================
 // SERVICOS_ESSENCIAIS_DATA — SecMulher-PE · Militância Serv. Essenciais
 // ----------------------------------------------------------------------------
 // Gerado por scripts/build-servicos-essenciais-data.mjs — não editar manualmente.
-// Fonte: src/data/TERCEIRIZADOS SECMULHER - ELEIÇÃO.xlsx — todas as linhas
-// cuja LOTAÇÃO é uma unidade de acolhimento/abrigo externo (Casa Abrigo,
-// Casa Passagem, Abrigamento, Adalgisa, Marici). Algumas unidades usam nome
-// de código em vez do município real (endereço de casa abrigo é sigiloso).
-//
-// Para atualizar: substitua o arquivo-fonte e rode
+// Fonte: src/data/servicos-essenciais/casas-abrigo.xlsx — planilha curada
+// manualmente com a unidade real de cada funcionário. Para atualizar,
+// substitua esse arquivo (mesmas colunas) e rode
 //   node scripts/build-servicos-essenciais-data.mjs
 // ============================================================================
 
