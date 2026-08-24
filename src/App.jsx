@@ -139,15 +139,27 @@ export default function App() {
 
               <div className="grid lg:grid-cols-[65%_35%] gap-5 items-start">
                 <div className="rounded-2xl border border-institucional-border bg-white shadow-card p-4">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-2 gap-2 flex-wrap">
                     <h2 className="text-base font-extrabold text-institucional-deep">
                       Mapa Interativo de Pernambuco — Presença Territorial
                     </h2>
-                    {compareMode && (
-                      <span className="text-xs font-semibold text-institucional-amber bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
-                        Modo comparação: clique em 2 municípios
-                      </span>
-                    )}
+                    <div className="flex items-center gap-2">
+                      {compareMode && (
+                        <span className="text-xs font-semibold text-institucional-amber bg-amber-50 border border-amber-200 rounded-full px-3 py-1">
+                          Modo comparação: clique em 2 municípios
+                        </span>
+                      )}
+                      <select
+                        value={selectedMunicipioId ?? 'Todos'}
+                        onChange={(e) => setSelectedMunicipioId(e.target.value === 'Todos' ? null : e.target.value)}
+                        className="text-sm rounded-lg border border-institucional-border px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-institucional-vibrant"
+                      >
+                        <option value="Todos">Todos os Municípios</option>
+                        {municipios.map((m) => (
+                          <option key={m.id} value={m.id}>{m.nome} ({m.totalMilitantes})</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                   <PernambucoMap
                     dadosPorId={dadosPorId}
