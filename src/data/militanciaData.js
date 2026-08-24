@@ -24,7 +24,7 @@ export const MILITANCIA_DATA = {
       "total": 184
     },
     "setoresMapeados": 47,
-    "bairrosMapeados": 80
+    "bairrosMapeados": 79
   },
   "mesorregioes": [
     "RMR",
@@ -277,12 +277,8 @@ export const MILITANCIA_DATA = {
       "percentualMilitantes": 9.3,
       "topBairros": [
         {
-          "bairro": "Idianópolis",
-          "militantes": 1
-        },
-        {
-          "bairro": "Indianapolis",
-          "militantes": 1
+          "bairro": "Indianópolis",
+          "militantes": 2
         },
         {
           "bairro": "Nossa Senhora das Graças",
@@ -305,14 +301,14 @@ export const MILITANCIA_DATA = {
           "id": "caruaru-2",
           "nome": "Erisson Andrade",
           "setor": "DIPLAG",
-          "bairro": "Indianapolis",
+          "bairro": "Indianópolis",
           "contato": "+55 81 9653-4040"
         },
         {
           "id": "caruaru-1",
           "nome": "Rafaella Santos",
           "setor": "Coordenadora Regional do Agreste Setentrional",
-          "bairro": "Idianópolis",
+          "bairro": "Indianópolis",
           "contato": "+55 81 9440-4019"
         },
         {
