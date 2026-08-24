@@ -48,6 +48,7 @@ export const MILITANCIA_DATA = {
     "Assessora Técnica de Comunicação Social e Imprensa",
     "Assistente de Gerência",
     "CAJ",
+    "Chefe de Gabinete",
     "Cooordenadora Adjunta de Controla Interno",
     "Coordenadora Regional da Mata Sul",
     "Coordenadora Regional do Agreste Central",
@@ -61,7 +62,6 @@ export const MILITANCIA_DATA = {
     "GERAI",
     "Gerente de Articulação e Interiorização das Ações de Gênero",
     "Gerente de Gestão de Pessoas",
-    "Gestora de Articulação e Gestão ao Gabinete da Secretária",
     "Gestora de Justiça e Segurança",
     "Gestora de Trabalho e Renda",
     "Gestora do Serviço de Proteção",
@@ -87,7 +87,7 @@ export const MILITANCIA_DATA = {
       "pessoas": [
         {
           "id": "agua-preta-1",
-          "nome": "magalruiva",
+          "nome": "Margarida da Silva",
           "setor": "Coordenadora Regional da Mata Sul",
           "bairro": "Cohab",
           "contato": "+55 81 8904-2538"
@@ -221,7 +221,7 @@ export const MILITANCIA_DATA = {
       "pessoas": [
         {
           "id": "gravata-1",
-          "nome": "Poliana",
+          "nome": "Poliana Cristina Soares",
           "setor": "Coordenadora Regional do Agreste Central",
           "bairro": "Prado",
           "contato": "+55 81 9484-7031"
@@ -243,7 +243,7 @@ export const MILITANCIA_DATA = {
       "pessoas": [
         {
           "id": "igarassu-1",
-          "nome": "Ewelin SecMulher",
+          "nome": "Ewelin Cardoso",
           "setor": "Diretora de Enfrentamento a Violência de Gênero",
           "bairro": "Centro",
           "contato": "+55 81 9189-8472"
@@ -339,14 +339,14 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "jaboatao-dos-guararapes-4",
-          "nome": "Edinalva",
+          "nome": "Edinalva Bezerra Ramos",
           "setor": "Assessora de Diretoria",
           "bairro": null,
           "contato": "+55 81 8758-1911"
         },
         {
           "id": "jaboatao-dos-guararapes-1",
-          "nome": "RH",
+          "nome": "Itamar Alves Gadelha",
           "setor": "Gerente de Gestão de Pessoas",
           "bairro": "Candeias",
           "contato": "+5581986007803"
@@ -444,7 +444,7 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "olinda-1",
-          "nome": "Selene sec mulher",
+          "nome": "Selence Correia",
           "setor": "DIPLAG",
           "bairro": "Peixinhos",
           "contato": "+55 81 9852-9225"
@@ -496,7 +496,7 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "paulista-6",
-          "nome": "Ari",
+          "nome": "Aristóteles Marques Cavalcanti da Silva",
           "setor": "DIPLAG",
           "bairro": "Janga",
           "contato": "+55 81 8319-8590"
@@ -510,8 +510,8 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "paulista-2",
-          "nome": "Eli secmulher",
-          "setor": "Gestora de Articulação e Gestão ao Gabinete da Secretária",
+          "nome": "Elyziana Machado",
+          "setor": "Chefe de Gabinete",
           "bairro": "Centro",
           "contato": "+55 81 9471-6607"
         },
@@ -660,7 +660,7 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "recife-5",
-          "nome": "Iris",
+          "nome": "Iris Pessoa Cavalcanti",
           "setor": "Assessora de Gerência",
           "bairro": "Engenho do Meio",
           "contato": "+55 81 8771-1294"
@@ -688,7 +688,7 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "recife-7",
-          "nome": "Luan",
+          "nome": "Luan Lourivan da Silva",
           "setor": "Assessor Especial",
           "bairro": "Santo Antônio",
           "contato": "+55 81 9485-6557"
@@ -744,7 +744,7 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "recife-11",
-          "nome": "Raquel",
+          "nome": "Raquel Vilela Rizuto Cadena",
           "setor": "DIPLAG",
           "bairro": "Casa Amarela",
           "contato": "+55 81 9614-5998"
@@ -822,7 +822,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-8",
-      "nome": "alice",
+      "nome": "Alice Ketellen Santos da Rocha",
       "contato": "+55 81 8758-1780",
       "setor": null,
       "bairro": null,
@@ -853,6 +853,14 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
+      "id": "pendencia-19",
+      "nome": "Ana Paula",
+      "contato": "+55 81 8511-7883",
+      "setor": "Vigilante",
+      "bairro": null,
+      "municipio": null
+    },
+    {
       "id": "pendencia-6",
       "nome": "Andreza K. Passos",
       "contato": "+55 81 8308-8430",
@@ -870,7 +878,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-12",
-      "nome": "Bruna",
+      "nome": "Bruna Joana da Silva",
       "contato": "+55 81 9976-8548",
       "setor": null,
       "bairro": null,
@@ -910,9 +918,9 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-16",
-      "nome": "Dani",
+      "nome": "Daniele Souza",
       "contato": "+55 81 9488-3535",
-      "setor": null,
+      "setor": "DEVG 190",
       "bairro": null,
       "municipio": null
     },
@@ -933,14 +941,6 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-19",
-      "nome": "Deus é bom o tempo todo",
-      "contato": "+55 81 8511-7883",
-      "setor": null,
-      "bairro": null,
-      "municipio": null
-    },
-    {
       "id": "pendencia-20",
       "nome": "Edinéa Sousa",
       "contato": "+55 81 9950-8337",
@@ -950,7 +950,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-2",
-      "nome": "Eduardo Lopes",
+      "nome": "Eduardo Florêncio",
       "contato": "+55 81 9674-0834",
       "setor": null,
       "bairro": null,
@@ -981,16 +981,8 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-23",
-      "nome": "Família Cruz Pessoa",
-      "contato": "+55 81 8969-0804",
-      "setor": null,
-      "bairro": null,
-      "municipio": null
-    },
-    {
       "id": "pendencia-24",
-      "nome": "Fernando",
+      "nome": "Fernando da Silva Alves",
       "contato": "+55 81 9644-4777",
       "setor": null,
       "bairro": null,
@@ -1030,7 +1022,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-28",
-      "nome": "Gisele",
+      "nome": "Gisele Maria Ramos",
       "contato": "+55 81 9332-8771",
       "setor": null,
       "bairro": null,
@@ -1046,7 +1038,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-30",
-      "nome": "Itamar",
+      "nome": "Itamar Belarmino Ricardo F da Costa",
       "contato": "+55 81 9700-1063",
       "setor": null,
       "bairro": null,
@@ -1054,7 +1046,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-31",
-      "nome": "Jady",
+      "nome": "Jady Santos",
       "contato": "+55 81 8466-6146",
       "setor": null,
       "bairro": null,
@@ -1065,6 +1057,14 @@ export const MILITANCIA_DATA = {
       "nome": "Jamerson Gomes",
       "contato": "+55 81 8861-8011",
       "setor": null,
+      "bairro": null,
+      "municipio": null
+    },
+    {
+      "id": "pendencia-23",
+      "nome": "Jana Cruz",
+      "contato": "+55 81 8969-0804",
+      "setor": "Governanta",
       "bairro": null,
       "municipio": null
     },
@@ -1182,7 +1182,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-46",
-      "nome": "Patricia",
+      "nome": "Patricia Dayse V Soares",
       "contato": "+55 81 8515-1850",
       "setor": null,
       "bairro": null,
@@ -1230,7 +1230,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-52",
-      "nome": "thamires",
+      "nome": "Thamires Rayane da Silva",
       "contato": "+55 81 8894-4811",
       "setor": null,
       "bairro": null,
@@ -1254,7 +1254,7 @@ export const MILITANCIA_DATA = {
     },
     {
       "id": "pendencia-55",
-      "nome": "Vera",
+      "nome": "Vera Maria de Moura",
       "contato": "+55 81 8321-5021",
       "setor": null,
       "bairro": null,
@@ -1269,18 +1269,18 @@ export const MILITANCIA_DATA = {
       "municipio": null
     },
     {
-      "id": "pendencia-57",
-      "nome": "Vi",
-      "contato": "+55 81 9326-9320",
+      "id": "pendencia-58",
+      "nome": "Vinicius Ricardo",
+      "contato": "+55 81 8802-7393",
       "setor": null,
       "bairro": null,
       "municipio": null
     },
     {
-      "id": "pendencia-58",
-      "nome": "Vinicius Ricardo",
-      "contato": "+55 81 8802-7393",
-      "setor": null,
+      "id": "pendencia-57",
+      "nome": "Vitotia Silva",
+      "contato": "+55 81 9326-9320",
+      "setor": "Diplag UPL",
       "bairro": null,
       "municipio": null
     },
