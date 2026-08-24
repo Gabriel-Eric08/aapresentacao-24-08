@@ -37,11 +37,16 @@ function slug(s) {
     .replace(/(^-|-$)/g, '')
 }
 
+// Unidades ocultas temporariamente a pedido (os dados continuam na
+// planilha-fonte, intactos) — tire daqui quando precisar mostrar de novo.
+const UNIDADES_OCULTAS = new Set(['Caxanga', 'Jiquiá'])
+
 const wb = XLSX.readFile(SRC_FILE)
 const rows = XLSX.utils.sheet_to_json(wb.Sheets['Serv Essenciais'], { defval: '' })
 
 const pessoas = rows
   .filter((r) => String(r['Nome'] || '').trim())
+  .filter((r) => !UNIDADES_OCULTAS.has(String(r['Unidade (Casa Abrigo)'] || '').trim()))
   .map((r) => ({
     nome: String(r['Nome']).trim(),
     cargo: String(r['Cargo'] || '').trim() || null,

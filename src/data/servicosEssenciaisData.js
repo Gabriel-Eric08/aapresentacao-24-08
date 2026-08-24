@@ -16,8 +16,8 @@ export const SERVICOS_ESSENCIAIS_DATA = {
     "ultimaAtualizacao": "2026-08-24"
   },
   "kpis": {
-    "totalFuncionarios": 147,
-    "totalUnidades": 7,
+    "totalFuncionarios": 139,
+    "totalUnidades": 5,
     "cargosDistintos": 14
   },
   "unidades": [
@@ -1673,112 +1673,6 @@ export const SERVICOS_ESSENCIAIS_DATA = {
           "admissao": "19/05/2026",
           "jornada": "44",
           "turno": "Diurno"
-        }
-      ]
-    },
-    {
-      "id": "caxanga",
-      "nome": "Caxanga",
-      "totalFuncionarios": 4,
-      "cargos": [
-        {
-          "cargo": "Vigilante",
-          "total": 4
-        }
-      ],
-      "pessoas": [
-        {
-          "id": "caxanga-1",
-          "nome": "Clayton Vieira dos Santos",
-          "cargo": "Vigilante",
-          "unidade": "Caxanga",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "01/06/2026",
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "caxanga-2",
-          "nome": "Jose Valmerindo Antonio",
-          "cargo": "Vigilante",
-          "unidade": "Caxanga",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "01/06/2026",
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "caxanga-3",
-          "nome": "Kaline Trindade do Nascimento",
-          "cargo": "Vigilante",
-          "unidade": "Caxanga",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "01/06/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "caxanga-4",
-          "nome": "Severino José de Santana Filho",
-          "cargo": "Vigilante",
-          "unidade": "Caxanga",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "01/06/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        }
-      ]
-    },
-    {
-      "id": "jiquia",
-      "nome": "Jiquiá",
-      "totalFuncionarios": 4,
-      "cargos": [
-        {
-          "cargo": "Vigilante",
-          "total": 4
-        }
-      ],
-      "pessoas": [
-        {
-          "id": "jiquia-1",
-          "nome": "Douglas Silva dos Santos",
-          "cargo": "Vigilante",
-          "unidade": "Jiquiá",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "04/04/2025",
-          "jornada": "12/36",
-          "turno": "Noturno"
-        },
-        {
-          "id": "jiquia-2",
-          "nome": "Glauber Gomes da Silva",
-          "cargo": "Vigilante",
-          "unidade": "Jiquiá",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "18/07/1905",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jiquia-3",
-          "nome": "José Ubiratan dos Santos",
-          "cargo": "Vigilante",
-          "unidade": "Jiquiá",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "06/04/2026",
-          "jornada": "12/36",
-          "turno": "Diurno"
-        },
-        {
-          "id": "jiquia-4",
-          "nome": "Sandro Belo de Gouveia",
-          "cargo": "Vigilante",
-          "unidade": "Jiquiá",
-          "empresaContratada": "ALFORGE SEGURANÇA PATRIMONIAL LTDA",
-          "admissao": "06/04/2026",
-          "jornada": "12/36",
-          "turno": "Noturno"
         }
       ]
     }
