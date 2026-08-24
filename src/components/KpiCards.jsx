@@ -23,7 +23,6 @@ export default function KpiCards({ kpis }) {
         icon={<Users size={20} className="text-institucional-vibrant" />}
         label="Total de Militantes"
         value={formatarNumero(kpis.totalMilitantes)}
-        sub="Contatos + listagem de voluntárias"
         accent={{ bg: 'bg-institucional-soft', text: 'text-institucional-text' }}
       />
       <KpiCard
