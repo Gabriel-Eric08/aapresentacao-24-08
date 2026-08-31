@@ -14,17 +14,17 @@ export const MILITANCIA_DATA = {
   "metadata": {
     "orgao": "Secretaria da Mulher de Pernambuco (SecMulher-PE)",
     "painel": "Mapeamento de Militância e Presença Territorial",
-    "ultimaAtualizacao": "2026-08-24",
+    "ultimaAtualizacao": "2026-08-31",
     "modo": "producao"
   },
   "kpis": {
-    "totalMilitantes": 111,
+    "totalMilitantes": 129,
     "coberturaMunicipal": {
       "atual": 23,
       "total": 184
     },
-    "setoresMapeados": 47,
-    "bairrosMapeados": 79
+    "setoresMapeados": 55,
+    "bairrosMapeados": 88
   },
   "mesorregioes": [
     "RMR",
@@ -43,7 +43,9 @@ export const MILITANCIA_DATA = {
     "Assessora Especial de Controle Interno",
     "Assessora Técnica de Comunicação Social e Imprensa",
     "Assistente de Gerência",
+    "Assistente Social",
     "Auxilar Tecnica",
+    "Auxiliar Serviços Gerais",
     "CAJ",
     "Chefe de Gabinete",
     "Comunicação",
@@ -60,9 +62,12 @@ export const MILITANCIA_DATA = {
     "Coordenadora Regional do Sertão do Pajeú",
     "Coordenadora Regional do Sertão do São Francisco",
     "Coordenadora Regional Metropolitana",
+    "Copeira",
+    "DEVG",
     "DEVG 190",
     "DIPLAG",
     "Diretora de Enfrentamento a Violência de Gênero",
+    "Estagiária",
     "GEFSP E GEFV",
     "GERAI",
     "Gerente de Articulação e Interiorização das Ações de Gênero",
@@ -74,12 +79,15 @@ export const MILITANCIA_DATA = {
     "Governanta",
     "Manutenção Predial",
     "Motorista",
+    "Ouvidora da Mulher",
+    "Policial Militar",
     "Psicóloga",
     "Recepcionista",
     "Secretária da Mulher",
     "Secretária Executiva de Política para as Mulheres",
     "Supervisão -1",
-    "Técnico Admnistrativo"
+    "Técnico Admnistrativo",
+    "Vigilante"
   ],
   "municipios": [
     {
@@ -87,7 +95,7 @@ export const MILITANCIA_DATA = {
       "nome": "Abreu e Lima",
       "mesorregiao": "RMR",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Caétes 3",
@@ -109,7 +117,7 @@ export const MILITANCIA_DATA = {
       "nome": "Água Preta",
       "mesorregiao": "Zona da Mata",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Cohab",
@@ -131,7 +139,7 @@ export const MILITANCIA_DATA = {
       "nome": "Araripina",
       "mesorregiao": "Sertão",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Centro",
@@ -152,11 +160,19 @@ export const MILITANCIA_DATA = {
       "id": "cabo-de-santo-agostinho",
       "nome": "Cabo de Santo Agostinho",
       "mesorregiao": "RMR",
-      "totalMilitantes": 4,
-      "percentualMilitantes": 9.3,
+      "totalMilitantes": 6,
+      "percentualMilitantes": 11.3,
       "topBairros": [
         {
           "bairro": "Cohab",
+          "militantes": 1
+        },
+        {
+          "bairro": "Garapu",
+          "militantes": 1
+        },
+        {
+          "bairro": "Pavão",
           "militantes": 1
         },
         {
@@ -165,10 +181,6 @@ export const MILITANCIA_DATA = {
         },
         {
           "bairro": "Vila Dr. Manoel Clementino",
-          "militantes": 1
-        },
-        {
-          "bairro": "Vila Social Conta Mocambo.",
           "militantes": 1
         }
       ],
@@ -179,6 +191,13 @@ export const MILITANCIA_DATA = {
           "setor": "Assessora de Gerência",
           "bairro": "Ponte dos Carvalhos",
           "contato": "+55 81 9998-3351"
+        },
+        {
+          "id": "cabo-de-santo-agostinho-6",
+          "nome": "Elaine Leticia",
+          "setor": "Estagiária",
+          "bairro": "Pavão",
+          "contato": "+55 81 98977-4810"
         },
         {
           "id": "cabo-de-santo-agostinho-1",
@@ -195,6 +214,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9837-3326"
         },
         {
+          "id": "cabo-de-santo-agostinho-5",
+          "nome": "Thamires Rayane da Silva",
+          "setor": "Técnico Admnistrativo",
+          "bairro": "Garapu",
+          "contato": "+55 81 8894-4811"
+        },
+        {
           "id": "cabo-de-santo-agostinho-3",
           "nome": "Walkiria Alves",
           "setor": "Secretária Executiva de Política para as Mulheres",
@@ -208,7 +234,7 @@ export const MILITANCIA_DATA = {
       "nome": "Camaragibe",
       "mesorregiao": "RMR",
       "totalMilitantes": 2,
-      "percentualMilitantes": 4.7,
+      "percentualMilitantes": 3.8,
       "topBairros": [
         {
           "bairro": "Cosme Damião",
@@ -241,7 +267,7 @@ export const MILITANCIA_DATA = {
       "nome": "Carpina",
       "mesorregiao": "Zona da Mata",
       "totalMilitantes": 2,
-      "percentualMilitantes": 4.7,
+      "percentualMilitantes": 3.8,
       "topBairros": [
         {
           "bairro": "Lot. Santana",
@@ -274,7 +300,7 @@ export const MILITANCIA_DATA = {
       "nome": "Caruaru",
       "mesorregiao": "Agreste",
       "totalMilitantes": 4,
-      "percentualMilitantes": 9.3,
+      "percentualMilitantes": 7.5,
       "topBairros": [
         {
           "bairro": "Indianópolis",
@@ -325,7 +351,7 @@ export const MILITANCIA_DATA = {
       "nome": "Floresta",
       "mesorregiao": "Sertão",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Santa Rosa",
@@ -347,7 +373,7 @@ export const MILITANCIA_DATA = {
       "nome": "Garanhuns",
       "mesorregiao": "Agreste",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Heliópolis",
@@ -369,7 +395,7 @@ export const MILITANCIA_DATA = {
       "nome": "Gravatá",
       "mesorregiao": "Agreste",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Prado",
@@ -391,7 +417,7 @@ export const MILITANCIA_DATA = {
       "nome": "Igarassu",
       "mesorregiao": "RMR",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Centro",
@@ -413,7 +439,7 @@ export const MILITANCIA_DATA = {
       "nome": "Ipojuca",
       "mesorregiao": "RMR",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Centro",
@@ -435,7 +461,7 @@ export const MILITANCIA_DATA = {
       "nome": "Itapissuma",
       "mesorregiao": "RMR",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Mangabeira",
@@ -456,8 +482,8 @@ export const MILITANCIA_DATA = {
       "id": "jaboatao-dos-guararapes",
       "nome": "Jaboatão dos Guararapes",
       "mesorregiao": "RMR",
-      "totalMilitantes": 13,
-      "percentualMilitantes": 30.2,
+      "totalMilitantes": 14,
+      "percentualMilitantes": 26.4,
       "topBairros": [
         {
           "bairro": "Candeias",
@@ -476,7 +502,7 @@ export const MILITANCIA_DATA = {
           "militantes": 1
         },
         {
-          "bairro": "Engenho Velho",
+          "bairro": "Curado 3",
           "militantes": 1
         }
       ],
@@ -487,6 +513,13 @@ export const MILITANCIA_DATA = {
           "setor": "Cooordenadora Adjunta de Controla Interno",
           "bairro": "Piedade",
           "contato": "+55 81 9186-8665"
+        },
+        {
+          "id": "jaboatao-dos-guararapes-14",
+          "nome": "Ana Nery",
+          "setor": "Auxiliar Serviços Gerais",
+          "bairro": "Curado 3",
+          "contato": "+55 81 9695-8563"
         },
         {
           "id": "jaboatao-dos-guararapes-12",
@@ -579,7 +612,7 @@ export const MILITANCIA_DATA = {
       "nome": "Jaqueira",
       "mesorregiao": "Zona da Mata",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Frei caneca",
@@ -601,7 +634,7 @@ export const MILITANCIA_DATA = {
       "nome": "Manari",
       "mesorregiao": "Sertão",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Centro",
@@ -623,7 +656,7 @@ export const MILITANCIA_DATA = {
       "nome": "Olinda",
       "mesorregiao": "RMR",
       "totalMilitantes": 16,
-      "percentualMilitantes": 37.2,
+      "percentualMilitantes": 30.2,
       "topBairros": [
         {
           "bairro": "Rio Doce",
@@ -765,15 +798,19 @@ export const MILITANCIA_DATA = {
       "id": "paulista",
       "nome": "Paulista",
       "mesorregiao": "RMR",
-      "totalMilitantes": 10,
-      "percentualMilitantes": 23.3,
+      "totalMilitantes": 15,
+      "percentualMilitantes": 28.3,
       "topBairros": [
+        {
+          "bairro": "Maranguape 1",
+          "militantes": 3
+        },
         {
           "bairro": "Centro",
           "militantes": 2
         },
         {
-          "bairro": "Maranguape 1",
+          "bairro": "Maranguape 2",
           "militantes": 2
         },
         {
@@ -781,15 +818,18 @@ export const MILITANCIA_DATA = {
           "militantes": 1
         },
         {
-          "bairro": "Janga",
-          "militantes": 1
-        },
-        {
-          "bairro": "Maranguape 2",
+          "bairro": "Arthur Lundreg",
           "militantes": 1
         }
       ],
       "pessoas": [
+        {
+          "id": "paulista-11",
+          "nome": "Aline Roberta",
+          "setor": "CAJ",
+          "bairro": "Aurora",
+          "contato": "+55 81 98619-9127"
+        },
         {
           "id": "paulista-5",
           "nome": "Amadeu Barros",
@@ -805,6 +845,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 8308-8430"
         },
         {
+          "id": "paulista-13",
+          "nome": "Anna Clara",
+          "setor": "GERAI",
+          "bairro": "Arthur Lundreg",
+          "contato": "+55 81 9636-2930"
+        },
+        {
           "id": "paulista-4",
           "nome": "Aristóteles Marques Cavalcanti da Silva",
           "setor": "DIPLAG",
@@ -817,6 +864,13 @@ export const MILITANCIA_DATA = {
           "setor": "Gestora dos Serviços de Acolhimento",
           "bairro": "Maranguape I",
           "contato": "+55 81 8562-1822"
+        },
+        {
+          "id": "paulista-15",
+          "nome": "David",
+          "setor": "Auxiliar Serviços Gerais",
+          "bairro": "Maranguape 1",
+          "contato": "+55 81 9628-1697"
         },
         {
           "id": "paulista-6",
@@ -840,11 +894,25 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 8435-0533"
         },
         {
+          "id": "paulista-14",
+          "nome": "Gledsa Alves",
+          "setor": "Assistente de Gerência",
+          "bairro": "Jaguarana",
+          "contato": "+55 81 8862-2609"
+        },
+        {
           "id": "paulista-7",
           "nome": "Marcelino Albuquerque",
           "setor": "DIPLAG",
           "bairro": "Maranguape 2",
           "contato": "+55 81 8345-7619"
+        },
+        {
+          "id": "paulista-12",
+          "nome": "Maria Luiza",
+          "setor": "CAJ",
+          "bairro": "Maranguape 2",
+          "contato": "+55 81 8266-0946"
         },
         {
           "id": "paulista-1",
@@ -867,7 +935,7 @@ export const MILITANCIA_DATA = {
       "nome": "Petrolina",
       "mesorregiao": "Sertão",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Pedra do Bode",
@@ -888,7 +956,7 @@ export const MILITANCIA_DATA = {
       "id": "recife",
       "nome": "Recife",
       "mesorregiao": "RMR",
-      "totalMilitantes": 43,
+      "totalMilitantes": 53,
       "percentualMilitantes": 100,
       "topBairros": [
         {
@@ -900,19 +968,26 @@ export const MILITANCIA_DATA = {
           "militantes": 3
         },
         {
+          "bairro": "Casa Amarela",
+          "militantes": 3
+        },
+        {
           "bairro": "Iputinga",
           "militantes": 3
         },
         {
-          "bairro": "Aflitos",
-          "militantes": 2
-        },
-        {
-          "bairro": "Afogados",
-          "militantes": 2
+          "bairro": "Pina",
+          "militantes": 3
         }
       ],
       "pessoas": [
+        {
+          "id": "recife-44",
+          "nome": "Alanna Maria",
+          "setor": "DEVG",
+          "bairro": "Jardim São Paulo",
+          "contato": "+55 81 8428-1105"
+        },
         {
           "id": "recife-11",
           "nome": "Amanda Valença",
@@ -970,6 +1045,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 99827-0414"
         },
         {
+          "id": "recife-45",
+          "nome": "Edinéa Sousa",
+          "setor": "Policial Militar",
+          "bairro": "Torrões",
+          "contato": "+55 81 9950-8337"
+        },
+        {
           "id": "recife-35",
           "nome": "Ericka Tatiane",
           "setor": "CAJ",
@@ -991,11 +1073,25 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9218-8241"
         },
         {
+          "id": "recife-47",
+          "nome": "Geny Dione",
+          "setor": "Vigilante",
+          "bairro": "Engenho do Meio",
+          "contato": "+55 81 8355-8902"
+        },
+        {
           "id": "recife-7",
           "nome": "Gilvan Araújo",
           "setor": "Assessor Administrativo",
           "bairro": "Boa viagem",
           "contato": "+55 81 8940-5198"
+        },
+        {
+          "id": "recife-48",
+          "nome": "Girleide Maia",
+          "setor": "Técnico Admnistrativo",
+          "bairro": "Varzea",
+          "contato": "+55 81 8684-4553"
         },
         {
           "id": "recife-28",
@@ -1047,6 +1143,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9973-7998"
         },
         {
+          "id": "recife-49",
+          "nome": "Itamar Belarmino",
+          "setor": "Vigilante",
+          "bairro": "Varzea",
+          "contato": "+55 81 9700-1063"
+        },
+        {
           "id": "recife-5",
           "nome": "Jefferson Ferreira",
           "setor": "Motorista",
@@ -1087,6 +1190,13 @@ export const MILITANCIA_DATA = {
           "setor": "Assessor Especial",
           "bairro": "Santo Antônio",
           "contato": "+55 81 9485-6557"
+        },
+        {
+          "id": "recife-50",
+          "nome": "Lucia Gominho",
+          "setor": "Ouvidora da Mulher",
+          "bairro": "Torrões",
+          "contato": "+55 81 8885-0633"
         },
         {
           "id": "recife-21",
@@ -1138,6 +1248,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9730-1800"
         },
         {
+          "id": "recife-46",
+          "nome": "Patricia Dayse",
+          "setor": "Assistente Social",
+          "bairro": "Ibura",
+          "contato": "+55 81 8515-1850"
+        },
+        {
           "id": "recife-27",
           "nome": "Patricia de Paula",
           "setor": "DIPLAG",
@@ -1180,11 +1297,25 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9824-4801"
         },
         {
+          "id": "recife-51",
+          "nome": "Valmir nestor",
+          "setor": "Vigilante",
+          "bairro": "Pina",
+          "contato": "+55 81 8795-3819"
+        },
+        {
           "id": "recife-3",
           "nome": "Vera Maria de Moura",
           "setor": "Assessor Administrativo",
           "bairro": "Afogados",
           "contato": "+55 81 8321-5021"
+        },
+        {
+          "id": "recife-52",
+          "nome": "Veronica Perreira",
+          "setor": "Auxiliar Serviços Gerais",
+          "bairro": "Casa Amarela",
+          "contato": "+55 81 8415-7185"
         },
         {
           "id": "recife-42",
@@ -1208,6 +1339,13 @@ export const MILITANCIA_DATA = {
           "contato": "+55 81 9576-4140"
         },
         {
+          "id": "recife-53",
+          "nome": "Wilma de Assis Neres",
+          "setor": "Copeira",
+          "bairro": "Ibura",
+          "contato": "+55 81 8549-3417"
+        },
+        {
           "id": "recife-4",
           "nome": "Wilza Ribeiro",
           "setor": "DIPLAG",
@@ -1221,7 +1359,7 @@ export const MILITANCIA_DATA = {
       "nome": "Salgueiro",
       "mesorregiao": "Sertão",
       "totalMilitantes": 1,
-      "percentualMilitantes": 2.3,
+      "percentualMilitantes": 1.9,
       "topBairros": [
         {
           "bairro": "Nossa Senhora Aparecida",
@@ -1243,7 +1381,7 @@ export const MILITANCIA_DATA = {
       "nome": "São Lourenço da Mata",
       "mesorregiao": "RMR",
       "totalMilitantes": 2,
-      "percentualMilitantes": 4.7,
+      "percentualMilitantes": 3.8,
       "topBairros": [
         {
           "bairro": "Muribara",
@@ -1276,7 +1414,7 @@ export const MILITANCIA_DATA = {
       "nome": "Serra Talhada",
       "mesorregiao": "Sertão",
       "totalMilitantes": 2,
-      "percentualMilitantes": 4.7,
+      "percentualMilitantes": 3.8,
       "topBairros": [
         {
           "bairro": "AABB",
