@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "build:militancia": "node scripts/build-militancia-data.mjs",
     "build:eventos": "node scripts/build-eventos-data.mjs",
-    "build:programas": "node scripts/build-programas-data.mjs"
+    "build:programas": "node scripts/build-programas-data.mjs",
+    "build:listas": "node scripts/build-listas-data.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

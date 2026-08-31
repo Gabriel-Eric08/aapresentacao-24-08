@@ -1,4 +1,4 @@
-import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles, Users2, ClipboardList, Store, Home } from 'lucide-react'
+import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles, Users2, ClipboardList, Store, Home, ListChecks } from 'lucide-react'
 
 // Abas ocultas temporariamente a pedido — troque pra true quando precisar
 // mostrar de novo.
@@ -98,6 +98,16 @@ export default function Header({
             }`}
           >
             <Home size={15} /> Militância Serv. Essenciais
+          </button>
+          <button
+            onClick={() => setAbaAtiva('listas')}
+            className={`inline-flex items-center gap-1.5 text-sm font-semibold rounded-lg px-3.5 py-1.5 transition ${
+              abaAtiva === 'listas'
+                ? 'bg-white text-institucional-deep'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <ListChecks size={15} /> Listas
           </button>
           {MOSTRAR_ABA_DADOS && (
           <button

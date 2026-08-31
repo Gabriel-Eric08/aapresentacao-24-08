@@ -4,6 +4,7 @@ import { EVENTOS_DATA } from './data/eventosData.js'
 import { EMPREENDE_MULHER_DATA } from './data/empreendeMulherData.js'
 import { PE_MUNICIPIOS_GEO } from './data/pernambucoMunicipiosGeo.js'
 import { SERVICOS_ESSENCIAIS_DATA } from './data/servicosEssenciaisData.js'
+import { LISTAS_DATA } from './data/listasData.js'
 import Header from './components/Header.jsx'
 import KpiCards from './components/KpiCards.jsx'
 import PernambucoMap from './components/PernambucoMap.jsx'
@@ -12,6 +13,7 @@ import MilitantsTable from './components/MilitantsTable.jsx'
 import EventosPanel from './components/EventosPanel.jsx'
 import ProgramasPanel from './components/ProgramasPanel.jsx'
 import ServicosEssenciaisPanel from './components/ServicosEssenciaisPanel.jsx'
+import ListasPanel from './components/ListasPanel.jsx'
 import ComparisonPanel from './components/ComparisonPanel.jsx'
 import PrintDossie from './components/PrintDossie.jsx'
 
@@ -200,6 +202,8 @@ export default function App() {
             </>
           ) : abaAtiva === 'servicos-essenciais' ? (
             <ServicosEssenciaisPanel servicosEssenciais={SERVICOS_ESSENCIAIS_DATA} lgpdOn={lgpdOn} />
+          ) : abaAtiva === 'listas' ? (
+            <ListasPanel listasData={LISTAS_DATA} lgpdOn={lgpdOn} />
           ) : abaAtiva === 'dados' ? (
             <EventosPanel
               eventos={EVENTOS_DATA.eventos}
