@@ -2,8 +2,8 @@ import { Search, FileDown, ShieldCheck, ShieldOff, GitCompare, Sparkles, Users2,
 
 // Abas ocultas temporariamente a pedido — troque pra true quando precisar
 // mostrar de novo.
-const MOSTRAR_ABA_DADOS = false
-const MOSTRAR_ABA_PROGRAMAS = false
+const MOSTRAR_ABA_DADOS = true
+const MOSTRAR_ABA_PROGRAMAS = true
 
 export default function Header({
   mesorregioes,
