@@ -1,5 +1,29 @@
 // Funções utilitárias compartilhadas pelos componentes do painel.
 
+const PARTICULAS_NOME = new Set(['de', 'da', 'do', 'das', 'dos', 'e'])
+
+// Padroniza a exibição de nomes de pessoas (primeira letra de cada nome e
+// sobrenome maiúscula), sem alterar os dados de origem — só o texto
+// renderizado na tela. Preposições comuns em nomes (de/da/do/das/dos/e)
+// ficam minúsculas quando não são a primeira palavra.
+export function capitalizarNome(nome) {
+  if (!nome) return nome
+  if (nome.trim().startsWith('@')) return nome // handle de rede social, não é nome de pessoa
+  return String(nome)
+    .trim()
+    .split(/\s+/)
+    .map((palavra, i) => {
+      const capitalizada = palavra.replace(
+        /\p{L}+/gu,
+        (letras) => letras.charAt(0).toLocaleUpperCase('pt-BR') + letras.slice(1).toLocaleLowerCase('pt-BR')
+      )
+      const nucleo = palavra.toLocaleLowerCase('pt-BR').replace(/[^\p{L}]/gu, '')
+      if (i > 0 && PARTICULAS_NOME.has(nucleo)) return palavra.toLocaleLowerCase('pt-BR')
+      return capitalizada
+    })
+    .join(' ')
+}
+
 export function mascararNome(nomeCompleto) {
   return nomeCompleto
     .split(' ')

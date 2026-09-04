@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CalendarDays, MapPin, Users, X, Phone, ClipboardList, Store } from 'lucide-react'
-import { formatarNumero, formatarData, mascararNome, mascararContato } from '../utils/helpers'
+import { formatarNumero, formatarData, mascararNome, mascararContato, capitalizarNome } from '../utils/helpers'
 
 function SummaryCard({ icon, label, valor, sub, accent }) {
   return (
@@ -95,7 +95,7 @@ function AtaModal({ evento, lgpdOn, onClose }) {
               {evento.participantes.map((p, i) => (
                 <tr key={i} className="hover:bg-institucional-bg transition-colors">
                   <td className="px-4 py-1.5 text-gray-400">{p.numero}</td>
-                  <td className="px-3 py-1.5 font-medium text-gray-800">{lgpdOn ? mascararNome(p.nome) : p.nome}</td>
+                  <td className="px-3 py-1.5 font-medium text-gray-800">{lgpdOn ? mascararNome(p.nome) : capitalizarNome(p.nome)}</td>
                   <td className="px-3 py-1.5 text-gray-600">
                     {p.telefone && (
                       <span className="inline-flex items-center gap-1">

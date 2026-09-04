@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Users, Home, Briefcase, Search, Building2 } from 'lucide-react'
-import { formatarNumero, mascararNome } from '../utils/helpers'
+import { formatarNumero, mascararNome, capitalizarNome } from '../utils/helpers'
 
 function KpiCard({ icon, label, value, sub, accent }) {
   return (
@@ -162,7 +162,7 @@ export default function ServicosEssenciaisPanel({ servicosEssenciais, lgpdOn }) 
               {pessoasFiltradas.map((p) => (
                 <tr key={p.id} className="hover:bg-institucional-bg transition-colors">
                   <td className="px-3 py-2.5 font-medium text-gray-800 whitespace-nowrap">
-                    {lgpdOn ? mascararNome(p.nome) : p.nome}
+                    {lgpdOn ? mascararNome(p.nome) : capitalizarNome(p.nome)}
                   </td>
                   <td className="px-3 py-2.5 text-gray-600 whitespace-nowrap">{p.cargo}</td>
                   <td className="px-3 py-2.5 text-gray-600 whitespace-nowrap">{p.unidadeNome}</td>

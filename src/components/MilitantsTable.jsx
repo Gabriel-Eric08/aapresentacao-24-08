@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Search, X, Phone, MapPin } from 'lucide-react'
-import { mascararNome, mascararContato } from '../utils/helpers'
+import { mascararNome, mascararContato, capitalizarNome } from '../utils/helpers'
 
 export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimparMunicipio, onFocarMunicipio }) {
   const [busca, setBusca] = useState('')
@@ -88,7 +88,7 @@ export default function MilitantsTable({ linhas, lgpdOn, municipioAtivo, onLimpa
             {linhasFiltradas.map((l) => (
               <tr key={l.id} className="hover:bg-institucional-bg transition-colors">
                 <td className="px-3 py-2.5 font-medium text-gray-800 whitespace-nowrap">
-                  {lgpdOn ? mascararNome(l.nome) : l.nome}
+                  {lgpdOn ? mascararNome(l.nome) : capitalizarNome(l.nome)}
                 </td>
                 <td className="px-3 py-2.5 text-gray-600">{l.setor}</td>
                 <td className="px-3 py-2.5 text-gray-600 whitespace-nowrap">{l.municipio}</td>

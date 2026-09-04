@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Users, ListChecks, Eye, X, Search } from 'lucide-react'
-import { formatarNumero, mascararNome } from '../utils/helpers'
+import { formatarNumero, mascararNome, capitalizarNome } from '../utils/helpers'
 
 function KpiCard({ icon, label, value, sub, accent }) {
   return (
@@ -30,7 +30,7 @@ function ListaModal({ lista, lgpdOn, onClose }) {
         <div className="flex items-center justify-between px-5 py-4 border-b border-institucional-border">
           <div>
             <h3 className="text-base font-extrabold text-institucional-deep">
-              Lista de {lgpdOn ? mascararNome(lista.dono) : lista.dono}
+              Lista de {lgpdOn ? mascararNome(lista.dono) : capitalizarNome(lista.dono)}
             </h3>
             <p className="text-xs text-gray-500 mt-0.5">{formatarNumero(lista.total)} pessoa(s) nesta lista</p>
           </div>
@@ -55,7 +55,7 @@ function ListaModal({ lista, lgpdOn, onClose }) {
           <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
             {nomesFiltrados.map((nome, i) => (
               <li key={i} className="text-gray-700 truncate" title={nome}>
-                {lgpdOn ? mascararNome(nome) : nome}
+                {lgpdOn ? mascararNome(nome) : capitalizarNome(nome)}
               </li>
             ))}
           </ul>
@@ -101,7 +101,7 @@ export default function ListasPanel({ listasData, lgpdOn }) {
           {listas.map((lista) => (
             <li key={lista.id} className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3">
               <p className="font-semibold text-gray-800 truncate min-w-0">
-                {lgpdOn ? mascararNome(lista.dono) : lista.dono}
+                {lgpdOn ? mascararNome(lista.dono) : capitalizarNome(lista.dono)}
               </p>
               <div className="flex items-center gap-3 shrink-0">
                 <span className="text-sm font-bold text-institucional-deep bg-institucional-soft rounded-full px-3 py-1">

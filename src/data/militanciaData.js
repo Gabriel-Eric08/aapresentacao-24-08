@@ -1158,17 +1158,10 @@ export const MILITANCIA_DATA = {
         },
         {
           "id": "recife-13",
-          "nome": "Jemarryr Cardoso",
+          "nome": "Jemarryr santos",
           "setor": "GEFSP E GEFV",
           "bairro": "Boa Vista",
           "contato": "+55 81 99281-7857"
-        },
-        {
-          "id": "recife-14",
-          "nome": "Jemarryr santos",
-          "setor": "Técnico Admnistrativo",
-          "bairro": "Boa vista",
-          "contato": "+55 81 9395-8754"
         },
         {
           "id": "recife-8",

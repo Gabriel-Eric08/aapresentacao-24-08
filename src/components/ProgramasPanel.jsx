@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Store, Search, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
-import { formatarNumero, formatarData, mascararNome, mascararContato } from '../utils/helpers'
+import { formatarNumero, formatarData, mascararNome, mascararContato, capitalizarNome } from '../utils/helpers'
 
 const POR_PAGINA = 25
 
@@ -104,7 +104,7 @@ export default function ProgramasPanel({ empreendeMulher, lgpdOn }) {
               {cadastradasPagina.map((c) => (
                 <tr key={c.id} className="hover:bg-institucional-bg transition-colors">
                   <td className="px-3 py-2 font-medium text-gray-800 whitespace-nowrap">
-                    {lgpdOn ? mascararNome(c.nome) : c.nome}
+                    {lgpdOn ? mascararNome(c.nome) : capitalizarNome(c.nome)}
                   </td>
                   <td className="px-3 py-2 text-gray-600 whitespace-nowrap">
                     {c.municipioNome && (
