@@ -12,7 +12,7 @@ export const LISTAS_DATA = {
     "orgao": "Secretaria da Mulher de Pernambuco (SecMulher-PE)",
     "painel": "Listas de Contatos por Militante",
     "fonte": "src/listas/*.csv (um arquivo por pessoa)",
-    "ultimaAtualizacao": "2026-09-04"
+    "ultimaAtualizacao": "2026-09-09"
   },
   "totalPessoas": 4015,
   "totalListas": 54,
@@ -20,6 +20,7 @@ export const LISTAS_DATA = {
     {
       "id": "aline-roberta",
       "dono": "Aline Roberta",
+      "setor": "CAJ",
       "arquivo": "Aline_Roberta.csv",
       "total": 15,
       "nomes": [
@@ -43,6 +44,7 @@ export const LISTAS_DATA = {
     {
       "id": "aline-venancio",
       "dono": "Aline Venancio",
+      "setor": "CAJ",
       "arquivo": "Aline_Venancio.csv",
       "total": 95,
       "nomes": [
@@ -146,6 +148,7 @@ export const LISTAS_DATA = {
     {
       "id": "amadeu",
       "dono": "Amadeu",
+      "setor": "DIPLAG",
       "arquivo": "Amadeu.csv",
       "total": 79,
       "nomes": [
@@ -233,6 +236,7 @@ export const LISTAS_DATA = {
     {
       "id": "ana-paula",
       "dono": "Ana Paula",
+      "setor": "Assessora Especial de Controle Interno",
       "arquivo": "Ana_Paula.csv",
       "total": 16,
       "nomes": [
@@ -257,6 +261,7 @@ export const LISTAS_DATA = {
     {
       "id": "andreza",
       "dono": "Andreza",
+      "setor": "Técnico Admnistrativo",
       "arquivo": "Andreza.csv",
       "total": 20,
       "nomes": [
@@ -285,6 +290,7 @@ export const LISTAS_DATA = {
     {
       "id": "anielle",
       "dono": "Anielle",
+      "setor": "CAJ",
       "arquivo": "Anielle.csv",
       "total": 37,
       "nomes": [
@@ -330,6 +336,7 @@ export const LISTAS_DATA = {
     {
       "id": "anna-clara",
       "dono": "Anna Clara",
+      "setor": "GERAI",
       "arquivo": "Anna_Clara.csv",
       "total": 98,
       "nomes": [
@@ -436,6 +443,7 @@ export const LISTAS_DATA = {
     {
       "id": "ari",
       "dono": "Ari",
+      "setor": "DIPLAG",
       "arquivo": "Ari.csv",
       "total": 69,
       "nomes": [
@@ -513,6 +521,7 @@ export const LISTAS_DATA = {
     {
       "id": "betania-soares",
       "dono": "Betania Soares",
+      "setor": "GEFSP E GEFV",
       "arquivo": "Betania_Soares.csv",
       "total": 113,
       "nomes": [
@@ -634,6 +643,7 @@ export const LISTAS_DATA = {
     {
       "id": "cadidja",
       "dono": "Cadidja",
+      "setor": "Gestora dos Serviços de Acolhimento",
       "arquivo": "Cadidja.csv",
       "total": 27,
       "nomes": [
@@ -669,6 +679,7 @@ export const LISTAS_DATA = {
     {
       "id": "darling-lima",
       "dono": "Darling Lima",
+      "setor": "Assessora de Gerência",
       "arquivo": "Darling_Lima.csv",
       "total": 100,
       "nomes": [
@@ -777,6 +788,7 @@ export const LISTAS_DATA = {
     {
       "id": "debora-eloy",
       "dono": "Debora Eloy",
+      "setor": "Assessor Administrativo",
       "arquivo": "Debora_Eloy.csv",
       "total": 106,
       "nomes": [
@@ -891,6 +903,7 @@ export const LISTAS_DATA = {
     {
       "id": "diogenes-tavares",
       "dono": "Diógenes Tavares",
+      "setor": "GERAI",
       "arquivo": "Diógenes_Tavares.csv",
       "total": 91,
       "nomes": [
@@ -990,6 +1003,7 @@ export const LISTAS_DATA = {
     {
       "id": "eduardo-lopes",
       "dono": "Eduardo Lopes",
+      "setor": "Manutenção Predial",
       "arquivo": "Eduardo_Lopes.csv",
       "total": 63,
       "nomes": [
@@ -1061,6 +1075,7 @@ export const LISTAS_DATA = {
     {
       "id": "elaine",
       "dono": "Elaine",
+      "setor": "Estagiária",
       "arquivo": "Elaine.csv",
       "total": 73,
       "nomes": [
@@ -1142,6 +1157,7 @@ export const LISTAS_DATA = {
     {
       "id": "elimarcos",
       "dono": "Elimarcos",
+      "setor": "Supervisão -1",
       "arquivo": "Elimarcos.csv",
       "total": 99,
       "nomes": [
@@ -1249,6 +1265,7 @@ export const LISTAS_DATA = {
     {
       "id": "ericka-tatiana",
       "dono": "Ericka Tatiana",
+      "setor": "CAJ",
       "arquivo": "Ericka_Tatiana.csv",
       "total": 40,
       "nomes": [
@@ -1297,6 +1314,7 @@ export const LISTAS_DATA = {
     {
       "id": "erisson",
       "dono": "Erisson",
+      "setor": "DIPLAG",
       "arquivo": "Erisson.csv",
       "total": 100,
       "nomes": [
@@ -1405,6 +1423,7 @@ export const LISTAS_DATA = {
     {
       "id": "ewelin",
       "dono": "Ewelin",
+      "setor": "Diretora de Enfrentamento a Violência de Gênero",
       "arquivo": "Ewelin.csv",
       "total": 57,
       "nomes": [
@@ -1470,6 +1489,7 @@ export const LISTAS_DATA = {
     {
       "id": "gabriel-eric",
       "dono": "Gabriel Eric",
+      "setor": "DIPLAG",
       "arquivo": "Gabriel_Eric.csv",
       "total": 87,
       "nomes": [
@@ -1565,6 +1585,7 @@ export const LISTAS_DATA = {
     {
       "id": "gabriela-amazonas",
       "dono": "Gabriela Amazonas",
+      "setor": "GEFSP E GEFV",
       "arquivo": "Gabriela_Amazonas.csv",
       "total": 105,
       "nomes": [
@@ -1678,6 +1699,7 @@ export const LISTAS_DATA = {
     {
       "id": "gilvan",
       "dono": "GILVAN",
+      "setor": "Gestor de Frota",
       "arquivo": "GILVAN.csv",
       "total": 100,
       "nomes": [
@@ -1786,6 +1808,7 @@ export const LISTAS_DATA = {
     {
       "id": "giovanna-tenorio",
       "dono": "Giovanna Tenorio",
+      "setor": null,
       "arquivo": "Giovanna_Tenorio.csv",
       "total": 102,
       "nomes": [
@@ -1896,6 +1919,7 @@ export const LISTAS_DATA = {
     {
       "id": "gisele-ramos",
       "dono": "Gisele Ramos",
+      "setor": "Assessor Administrativo",
       "arquivo": "Gisele_Ramos.csv",
       "total": 100,
       "nomes": [
@@ -2004,6 +2028,7 @@ export const LISTAS_DATA = {
     {
       "id": "heliana-carvalho",
       "dono": "HELIANA CARVALHO",
+      "setor": "GERAI",
       "arquivo": "HELIANA CARVALHO.csv",
       "total": 100,
       "nomes": [
@@ -2112,6 +2137,7 @@ export const LISTAS_DATA = {
     {
       "id": "ianne",
       "dono": "Ianne",
+      "setor": "DIPLAG",
       "arquivo": "Ianne.csv",
       "total": 100,
       "nomes": [
@@ -2220,6 +2246,7 @@ export const LISTAS_DATA = {
     {
       "id": "ines-tenorio",
       "dono": "INÊS TENÓRIO",
+      "setor": "Gerente de Articulação e Interiorização das Ações de Gênero",
       "arquivo": "INÊS TENÓRIO.csv",
       "total": 102,
       "nomes": [
@@ -2330,6 +2357,7 @@ export const LISTAS_DATA = {
     {
       "id": "ingrid",
       "dono": "Ingrid",
+      "setor": "GEFSP E GEFV",
       "arquivo": "Ingrid.csv",
       "total": 128,
       "nomes": [
@@ -2466,6 +2494,7 @@ export const LISTAS_DATA = {
     {
       "id": "iris",
       "dono": "Iris",
+      "setor": "Assessora de Gerência",
       "arquivo": "Iris.csv",
       "total": 40,
       "nomes": [
@@ -2514,6 +2543,7 @@ export const LISTAS_DATA = {
     {
       "id": "jady-santos",
       "dono": "Jady Santos",
+      "setor": "Assessor Administrativo",
       "arquivo": "Jady_Santos.csv",
       "total": 100,
       "nomes": [
@@ -2622,6 +2652,7 @@ export const LISTAS_DATA = {
     {
       "id": "janaina-ribeiro",
       "dono": "Janaína Ribeiro",
+      "setor": "GEFSP E GEFV",
       "arquivo": "Janaína_Ribeiro.csv",
       "total": 99,
       "nomes": [
@@ -2729,6 +2760,7 @@ export const LISTAS_DATA = {
     {
       "id": "jane",
       "dono": "Jane",
+      "setor": null,
       "arquivo": "Jane.csv",
       "total": 56,
       "nomes": [
@@ -2793,6 +2825,7 @@ export const LISTAS_DATA = {
     {
       "id": "jemarryr",
       "dono": "jemarryr",
+      "setor": "GEFSP E GEFV",
       "arquivo": "jemarryr.csv",
       "total": 131,
       "nomes": [
@@ -2932,6 +2965,7 @@ export const LISTAS_DATA = {
     {
       "id": "josilene-marins",
       "dono": "Josilene Marins",
+      "setor": "Assessora Técnica de Comunicação Social e Imprensa",
       "arquivo": "Josilene_Marins.csv",
       "total": 111,
       "nomes": [
@@ -3051,6 +3085,7 @@ export const LISTAS_DATA = {
     {
       "id": "juliene",
       "dono": "Juliene",
+      "setor": "Assessor Administrativo",
       "arquivo": "Juliene.csv",
       "total": 27,
       "nomes": [
@@ -3086,6 +3121,7 @@ export const LISTAS_DATA = {
     {
       "id": "larissa",
       "dono": "Larissa",
+      "setor": null,
       "arquivo": "Larissa.csv",
       "total": 20,
       "nomes": [
@@ -3114,6 +3150,7 @@ export const LISTAS_DATA = {
     {
       "id": "luciane",
       "dono": "Luciane",
+      "setor": "DIPLAG",
       "arquivo": "Luciane.csv",
       "total": 83,
       "nomes": [
@@ -3205,6 +3242,7 @@ export const LISTAS_DATA = {
     {
       "id": "manuela-leal-rodrigues",
       "dono": "Manuela Leal Rodrigues",
+      "setor": "DIPLAG",
       "arquivo": "Manuela_Leal_Rodrigues.csv",
       "total": 102,
       "nomes": [
@@ -3315,6 +3353,7 @@ export const LISTAS_DATA = {
     {
       "id": "marcelino",
       "dono": "Marcelino",
+      "setor": "DIPLAG",
       "arquivo": "Marcelino.csv",
       "total": 56,
       "nomes": [
@@ -3379,6 +3418,7 @@ export const LISTAS_DATA = {
     {
       "id": "margot",
       "dono": "Margot",
+      "setor": "Assessora de Política da Saúde da Mulher",
       "arquivo": "Margot.csv",
       "total": 100,
       "nomes": [
@@ -3487,6 +3527,7 @@ export const LISTAS_DATA = {
     {
       "id": "maria-luyza-maciel",
       "dono": "Maria Luyza Maciel",
+      "setor": "CAJ",
       "arquivo": "Maria_Luyza_Maciel.csv",
       "total": 15,
       "nomes": [
@@ -3510,6 +3551,7 @@ export const LISTAS_DATA = {
     {
       "id": "marinalva",
       "dono": "Marinalva",
+      "setor": "Técnico Admnistrativo",
       "arquivo": "Marinalva.csv",
       "total": 10,
       "nomes": [
@@ -3528,6 +3570,7 @@ export const LISTAS_DATA = {
     {
       "id": "monica",
       "dono": "Monica",
+      "setor": "Assessor Administrativo",
       "arquivo": "Monica.csv",
       "total": 11,
       "nomes": [
@@ -3547,6 +3590,7 @@ export const LISTAS_DATA = {
     {
       "id": "nathalia",
       "dono": "Nathália",
+      "setor": "GERAI",
       "arquivo": "Nathália.csv",
       "total": 86,
       "nomes": [
@@ -3641,6 +3685,7 @@ export const LISTAS_DATA = {
     {
       "id": "paloma",
       "dono": "Paloma",
+      "setor": "Assessor Administrativo",
       "arquivo": "Paloma.csv",
       "total": 22,
       "nomes": [
@@ -3671,6 +3716,7 @@ export const LISTAS_DATA = {
     {
       "id": "rafael",
       "dono": "Rafael",
+      "setor": "DIPLAG",
       "arquivo": "Rafael.csv",
       "total": 99,
       "nomes": [
@@ -3778,6 +3824,7 @@ export const LISTAS_DATA = {
     {
       "id": "raquel-rizoto",
       "dono": "Raquel Rizoto",
+      "setor": "DIPLAG",
       "arquivo": "Raquel_Rizoto.csv",
       "total": 90,
       "nomes": [
@@ -3876,6 +3923,7 @@ export const LISTAS_DATA = {
     {
       "id": "rayssa-nascimento",
       "dono": "Rayssa Nascimento",
+      "setor": "Assessor Administrativo",
       "arquivo": "Rayssa_Nascimento.csv",
       "total": 24,
       "nomes": [
@@ -3908,6 +3956,7 @@ export const LISTAS_DATA = {
     {
       "id": "roberta-peregrino",
       "dono": "Roberta Peregrino",
+      "setor": "GERAI",
       "arquivo": "Roberta_Peregrino.csv",
       "total": 100,
       "nomes": [
@@ -4016,6 +4065,7 @@ export const LISTAS_DATA = {
     {
       "id": "samara-dias",
       "dono": "SAMARA DIAS",
+      "setor": "GEFSP E GEFV",
       "arquivo": "SAMARA DIAS.csv",
       "total": 101,
       "nomes": [
@@ -4125,6 +4175,7 @@ export const LISTAS_DATA = {
     {
       "id": "samara-gomes",
       "dono": "Samara Gomes",
+      "setor": "GERAI",
       "arquivo": "Samara Gomes.csv",
       "total": 98,
       "nomes": [
@@ -4231,6 +4282,7 @@ export const LISTAS_DATA = {
     {
       "id": "samara-kezia-ramos",
       "dono": "SAMARA KÉZIA RAMOS",
+      "setor": "GERAI",
       "arquivo": "SAMARA KÉZIA RAMOS.csv",
       "total": 100,
       "nomes": [
@@ -4339,6 +4391,7 @@ export const LISTAS_DATA = {
     {
       "id": "thais",
       "dono": "Thais",
+      "setor": "Gestora de Justiça e Segurança",
       "arquivo": "Thais.csv",
       "total": 28,
       "nomes": [
@@ -4375,6 +4428,7 @@ export const LISTAS_DATA = {
     {
       "id": "victoria-silva",
       "dono": "Victoria Silva",
+      "setor": "DIPLAG",
       "arquivo": "Victoria_Silva.csv",
       "total": 84,
       "nomes": [

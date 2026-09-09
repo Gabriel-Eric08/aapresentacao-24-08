@@ -17,6 +17,63 @@ const ROOT = path.join(__dirname, '..')
 const SRC_DIR = path.join(ROOT, 'src/listas')
 const OUT_FILE = path.join(ROOT, 'src/data/listasData.js')
 
+// Setor de cada dono de lista, cruzado manualmente com a aba de Militância
+// (nomes na aba de Listas às vezes divergem do nome completo em Militância).
+// Deixados de fora (sem correspondência confirmada): Giovanna Tenorio, Jane, Larissa.
+const SETOR_POR_DONO = {
+  'Aline Roberta': 'CAJ',
+  'Aline Venancio': 'CAJ',
+  'Amadeu': 'DIPLAG',
+  'Ana Paula': 'Assessora Especial de Controle Interno',
+  'Andreza': 'Técnico Admnistrativo',
+  'Anielle': 'CAJ',
+  'Anna Clara': 'GERAI',
+  'Ari': 'DIPLAG',
+  'Betania Soares': 'GEFSP E GEFV',
+  'Cadidja': 'Gestora dos Serviços de Acolhimento',
+  'Darling Lima': 'Assessora de Gerência',
+  'Debora Eloy': 'Assessor Administrativo',
+  'Diógenes Tavares': 'GERAI',
+  'Eduardo Lopes': 'Manutenção Predial',
+  'Elaine': 'Estagiária',
+  'Elimarcos': 'Supervisão -1',
+  'Ericka Tatiana': 'CAJ',
+  'Erisson': 'DIPLAG',
+  'Ewelin': 'Diretora de Enfrentamento a Violência de Gênero',
+  'Gabriel Eric': 'DIPLAG',
+  'Gabriela Amazonas': 'GEFSP E GEFV',
+  'GILVAN': 'Gestor de Frota',
+  'Gisele Ramos': 'Assessor Administrativo',
+  'HELIANA CARVALHO': 'GERAI',
+  'Ianne': 'DIPLAG',
+  'INÊS TENÓRIO': 'Gerente de Articulação e Interiorização das Ações de Gênero',
+  'Ingrid': 'GEFSP E GEFV',
+  'Iris': 'Assessora de Gerência',
+  'Jady Santos': 'Assessor Administrativo',
+  'Janaína Ribeiro': 'GEFSP E GEFV',
+  'jemarryr': 'GEFSP E GEFV',
+  'Josilene Marins': 'Assessora Técnica de Comunicação Social e Imprensa',
+  'Juliene': 'Assessor Administrativo',
+  'Luciane': 'DIPLAG',
+  'Manuela Leal Rodrigues': 'DIPLAG',
+  'Marcelino': 'DIPLAG',
+  'Margot': 'Assessora de Política da Saúde da Mulher',
+  'Maria Luyza Maciel': 'CAJ',
+  'Marinalva': 'Técnico Admnistrativo',
+  'Monica': 'Assessor Administrativo',
+  'Nathália': 'GERAI',
+  'Paloma': 'Assessor Administrativo',
+  'Rafael': 'DIPLAG',
+  'Raquel Rizoto': 'DIPLAG',
+  'Rayssa Nascimento': 'Assessor Administrativo',
+  'Roberta Peregrino': 'GERAI',
+  'SAMARA DIAS': 'GEFSP E GEFV',
+  'Samara Gomes': 'GERAI',
+  'SAMARA KÉZIA RAMOS': 'GERAI',
+  'Thais': 'Gestora de Justiça e Segurança',
+  'Victoria Silva': 'DIPLAG',
+}
+
 function slug(s) {
   return String(s || '')
     .normalize('NFD')
@@ -46,9 +103,11 @@ const listas = arquivos
     const conteudo = fs.readFileSync(path.join(SRC_DIR, arquivo), 'utf8')
     const nomes = parseNomes(conteudo)
     const dono = path.basename(arquivo, '.csv').replace(/_/g, ' ').trim()
+    const setor = SETOR_POR_DONO[dono] || null
     return {
       id: slug(dono),
       dono,
+      setor,
       arquivo,
       total: nomes.length,
       nomes,

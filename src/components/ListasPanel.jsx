@@ -32,7 +32,14 @@ function ListaModal({ lista, lgpdOn, onClose }) {
             <h3 className="text-base font-extrabold text-institucional-deep">
               Lista de {lgpdOn ? mascararNome(lista.dono) : capitalizarNome(lista.dono)}
             </h3>
-            <p className="text-xs text-gray-500 mt-0.5">{formatarNumero(lista.total)} pessoa(s) nesta lista</p>
+            <p className="text-xs text-gray-500 mt-0.5">
+              {formatarNumero(lista.total)} pessoa(s) nesta lista
+              {lista.setor && (
+                <>
+                  {' '}· <span className="font-semibold text-institucional-text">{lista.setor}</span>
+                </>
+              )}
+            </p>
           </div>
           <button onClick={onClose} className="w-8 h-8 rounded-lg hover:bg-institucional-soft flex items-center justify-center text-gray-500">
             <X size={18} />
@@ -100,9 +107,14 @@ export default function ListasPanel({ listasData, lgpdOn }) {
         <ul className="divide-y divide-institucional-border">
           {listas.map((lista) => (
             <li key={lista.id} className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3">
-              <p className="font-semibold text-gray-800 truncate min-w-0">
-                {lgpdOn ? mascararNome(lista.dono) : capitalizarNome(lista.dono)}
-              </p>
+              <div className="min-w-0">
+                <p className="font-semibold text-gray-800 truncate">
+                  {lgpdOn ? mascararNome(lista.dono) : capitalizarNome(lista.dono)}
+                </p>
+                <p className="text-xs text-gray-500 truncate">
+                  {lista.setor || <span className="italic text-gray-400">Setor não identificado</span>}
+                </p>
+              </div>
               <div className="flex items-center gap-3 shrink-0">
                 <span className="text-sm font-bold text-institucional-deep bg-institucional-soft rounded-full px-3 py-1">
                   {formatarNumero(lista.total)} pessoa{lista.total === 1 ? '' : 's'}
