@@ -72,6 +72,12 @@ const SETOR_POR_DONO = {
   'SAMARA KÉZIA RAMOS': 'GERAI',
   'Thais': 'Gestora de Justiça e Segurança',
   'Victoria Silva': 'DIPLAG',
+  'Wilza Ribeiro': 'DIPLAG',
+  'Patricia de Paula': 'DIPLAG',
+  'Samuel Santos': 'DIPLAG',
+  'Patricia Dyase': 'Assistente Social',
+  'Gleyci Santos': 'DIPLAG',
+  'Aurora': 'DIPLAG',
 }
 
 function slug(s) {
